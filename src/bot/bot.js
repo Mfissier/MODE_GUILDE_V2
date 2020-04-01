@@ -5,7 +5,7 @@ const bot  = () => {
   const client = new Discord.Client();
   const fs = require("fs");
   client.commands = new Discord.Collection();
- 
+
   listen_bot_message_function = require('./listen_bot_message_function');
 
   //------------------BDD---------------------------------\\
@@ -13,7 +13,7 @@ const bot  = () => {
   // mongoose.connect('http://localhost:3001');
 
   //______________________
-
+//  client.login("Njk0MTgwMzMzODgwNDc1NjY4.XoTU_Q.jDUcOrPCFNTnROsO_F7CJwscoRI");
 
 
 // ---------------------- FS COMMANDE  ----------------------------\\
@@ -24,17 +24,20 @@ const bot  = () => {
 fs.readdir("./commands/", (err, files) => {
 
     if(err) console.log(err);
-
+    //console.log("voici les données que tu cherches pour Flies : " + files);
     let jsfile = files.filter(f => f.split(".").pop() === "js");
-    if(jsfile.length <= 0){
-      console.log("Couldn't find commands.");
+  //console.log(jsfile);
+    if(jsfile.length <= 0){jsfile.forEach(
+      console.log("Couldn't find commands."));
       return;
     }
-
+    console.log(jsfile);
+    console.log("voici les données que tu cherches pour Flies : " + files);
   jsfile.forEach((f, i) =>{
-    let props = require(`./commands/${f}`);
+    let props = require(`../../commands/${f}`);
+    console.log(props);
     console.log(`${f} loaded!`);
-    bot.commands.set(props.help.name, props);
+    client.commands.set(props.help.name, props);
   });
 
 });
@@ -47,31 +50,63 @@ fs.readdir("./commands/", (err, files) => {
   });
 
   client.on('message', async msg => {
-    if (msg.content === 'ping') {
+     if (msg.content === 'ping') {
+       try {
       msg.reply('Pong!');
-      console.log("Pong !");
-    }
-  });
-  client.login(config.token);
-
+       console.log("Pong !");
+       } catch (error) {
+         console.log("error");
+       }
+     }
+   });
+  
+   console.log(config.token);
 
   // set message listener 
   client.on('message', async message => {
   //a little bit of data parsing/general checks
-    if(message.author.bot) return;
-    if(message.channel.type === 'dm') return;
-    let content = message.content.split(" ");
-    let command = content[0];
-    let args = content.slice(1);
-    let prefix = config.prefix;
+        
+      // if(message.author.client){
+      //     try{
+      //       return;
+      //   } catch(error){
+      //     console.log("error");
+      //   }
+      // };
+        
+        // if(message.channel.type === 'dm'){
+        //     try {
+        //       return;
+        //     } catch(error){
+        //     console.log("error");
+        //       }
+        // };
+
+        let content = message.content.split(" ");
+        let command = content[0];
+        let args = content.slice(1);
+        let prefix = config.prefix;
 
 
-    //checks if message contains a command and runs it
-    let commandfile = bot.commands.get(command.slice(prefix.length));
-    if(commandfile) commandfile.run(bot,message,args);
-    listen_bot_message_function.listen_bot_message(message);
+      //   //checks if message contains a command and runs it
+        let commandfile = client.commands.get(command.slice(prefix.length));
+        console.log("PPPPPPPPPPPPP" +commandfile);
+        
+        // if(commandfile){
+        //     try{
+        //       commandfile.run(client,message,args);
+        //     } catch(error){
+        //       console.log("error");
+        //       }
+        // };
+      listen_bot_message_function.listen_bot_message(message); 
   });
 
-}
+client.login(config.token);
+
+
+ }
+ 
+
 
 module.exports.bot = bot;
