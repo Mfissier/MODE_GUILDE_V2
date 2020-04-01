@@ -1,0 +1,36 @@
+{
+  "name": "guildemode-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mfissier/MODE_GUILDE_REMASTERED.git"
+  },
+  "keywords": [
+    "truc machin pour discord et Dofus"
+  ],
+  "author": "Mfissier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mfissier/MODE_GUILDE_REMASTERED/issues"
+  },
+  "homepage": "https://github.com/Mfissier/MODE_GUILDE_REMASTERED#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "cookie-parser": "^1.4.5",
+    "discord.js": "^12.1.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.9.7",
+    "morgan": "^1.10.0",
+    "nodejs": "0.0.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
