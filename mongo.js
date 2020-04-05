@@ -1,10 +1,11 @@
 const express = require('express');
 const mongodb = require('mongodb');
+const token_Mongo = require('./config_Mongo');
 const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
 
-const CONNECTION_URL = "mongodb+srv://Mfissier:guildemodé123456789@cluster0-tubio.gcp.mongodb.net/test?retryWrites=true&w=majority";
-// const CONNECTION_URL = "mongodb+srv://White:dreggman132465@cluster0-fh2xs.mongodb.net/test?retryWrites=true&w=majority";
+const CONNECTION_URL = token_Mongo.tokenMongo;
+// const CONNECTION_URL = "mongodb+srv://:test1324@cluster0-fh2xs.mongodb.net/test?retryWrites=true&w=majority";
 const DATABASE_NAME = "GuildeModé";
 
 var database;
@@ -17,9 +18,29 @@ var database;
                 throw error;
             }
             database = client.db(DATABASE_NAME);
-            collection = database.collection("session");
+            collection = database.collection("POPO");
             console.log("Connected to " + DATABASE_NAME +  " la base de donnée!");
-            
+            var findItems = function findItems(){
+
+                // const collections = mongo.getDb().collection('users')
+                // console.log(collections);
+                // var query = { firstname: "maxime" };
+                collection.find({}).toArray((err, items) => {
+                    if (err){
+                         throw err;
+                    } else {
+                    console.log(items)
+                    }
+                  })
+                collection.insert({
+                    userId: "FUCK",
+                    comment: "YOU",
+                    canal: "CELINE",
+                    movieId: "T KUNE MERDE",
+                    date: new Date()
+                    });
+            }
+            findItems();
 
         })
 
@@ -41,5 +62,3 @@ var database;
             getDb,
             getMongodb,
         }
-
-

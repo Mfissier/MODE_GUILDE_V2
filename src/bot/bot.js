@@ -82,15 +82,15 @@ fs.readdir("./commands/", (err, files) => {
         //       }
         // };
 
-        let content = message.content.split(" ");
-        let command = content[0];
-        let args = content.slice(1);
-        let prefix = config.prefix;
+      //   let content = message.content.split(" ");
+      //   let command = content[0];
+      //   let args = content.slice(1);
+      //   let prefix = config.prefix;
 
 
       //   //checks if message contains a command and runs it
-        let commandfile = client.commands.get(command.slice(prefix.length));
-        console.log("PPPPPPPPPPPPP" +commandfile);
+        // let commandfile = client.commands.get(command.slice(prefix.length));
+        // console.log("PPPPPPPPPPPPP" +commandfile);
         
         // if(commandfile){
         //     try{
