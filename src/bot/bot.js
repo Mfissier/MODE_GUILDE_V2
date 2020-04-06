@@ -1,20 +1,14 @@
+
 const bot  = () => {
 
   const Discord = require('discord.js');
-  const config = require("./config.json")
+  const config = require("./config.json");
+  const mongo = require('../../mongo');
   const client = new Discord.Client();
   const fs = require("fs");
   client.commands = new Discord.Collection();
 
   listen_bot_message_function = require('./listen_bot_message_function');
-
-  //------------------BDD---------------------------------\\
-  // const mongoose = require('mongoose');
-  // mongoose.connect('http://localhost:3001');
-
-  //______________________
-//  client.login("Njk0MTgwMzMzODgwNDc1NjY4.XoTU_Q.jDUcOrPCFNTnROsO_F7CJwscoRI");
-
 
 // ---------------------- FS COMMANDE  ----------------------------\\
 
@@ -52,8 +46,10 @@ fs.readdir("./commands/", (err, files) => {
   client.on('message', async msg => {
      if (msg.content === 'ping') {
        try {
+         
       msg.reply('Pong!');
        console.log("Pong !");
+       mongo.test();
        } catch (error) {
          console.log("error");
        }
@@ -82,23 +78,23 @@ fs.readdir("./commands/", (err, files) => {
         //       }
         // };
 
-      //   let content = message.content.split(" ");
-      //   let command = content[0];
-      //   let args = content.slice(1);
-      //   let prefix = config.prefix;
+        let content = message.content.split(" ");
+        let command = content[0];
+        let args = content.slice(1);
+        let prefix = config.prefix;
 
 
       //   //checks if message contains a command and runs it
-        // let commandfile = client.commands.get(command.slice(prefix.length));
-        // console.log("PPPPPPPPPPPPP" +commandfile);
+        let commandfile = client.commands.get(command.slice(prefix.length));
+        console.log("PPPPPPPPPPPPP" +commandfile);
         
-        // if(commandfile){
-        //     try{
-        //       commandfile.run(client,message,args);
-        //     } catch(error){
-        //       console.log("error");
-        //       }
-        // };
+        if(commandfile){
+            try{
+              commandfile.run(client,message,args);
+            } catch(error){
+              console.log("error");
+              }
+        };
       listen_bot_message_function.listen_bot_message(message); 
   });
 

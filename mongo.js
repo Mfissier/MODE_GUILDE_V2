@@ -20,27 +20,9 @@ var database;
             database = client.db(DATABASE_NAME);
             collection = database.collection("POPO");
             console.log("Connected to " + DATABASE_NAME +  " la base de donnée!");
-            var findItems = function findItems(){
-
-                // const collections = mongo.getDb().collection('users')
-                // console.log(collections);
-                // var query = { firstname: "maxime" };
-                collection.find({}).toArray((err, items) => {
-                    if (err){
-                         throw err;
-                    } else {
-                    console.log(items)
-                    }
-                  })
-                collection.insert({
-                    userId: "FUCK",
-                    comment: "YOU",
-                    canal: "CELINE",
-                    movieId: "T KUNE MERDE",
-                    date: new Date()
-                    });
-            }
-            findItems();
+           
+           
+           
 
         })
 
@@ -55,10 +37,53 @@ var database;
             return mongodb;
         }
 
+        const test = () => {
+
+            // const collections = mongo.getDb().collection('users')
+            // console.log(collections);
+            // var query = { firstname: "maxime" };
+            collection.find({}).toArray((err, items) => {
+                if (err){
+                     throw err;
+                } else {
+                console.log(items)
+                }
+              })
+              collection.insertOne({
+                            userId: "FUCK",
+                            comment: "YOU",
+                            canal: "CELINE",
+                            movieId: "T KUNE MERDE",
+                            date: new Date()
+                            });
+            //   test();
+
+    }
 
         module.exports = {
 
             connect,
             getDb,
             getMongodb,
+            test,
         }
+    
+    //     const test = () => {
+
+    //         // const collections = mongo.getDb().collection('users')
+    //         // console.log(collections);
+    //         // var query = { firstname: "maxime" };
+    //         collection.find({}).toArray((err, items) => {
+    //             if (err){
+    //                  throw err;
+    //             } else {
+    //             console.log(items)
+    //             }
+    //           })
+    //      
+                
+    //         test(); 
+
+    // }
+
+        

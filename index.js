@@ -3,11 +3,10 @@ const mongo = require('./mongo');
 const mongodb = mongo.getMongodb();
 
 //const session = require('express-session');
-console.log("test");
+// console.log("test");
 //--------------------------- BOT DISCORD -------------------------------\\
 const use_bot = require('./src/bot/bot');
 
-// mongo.findItems();
 
 
 
