@@ -3,6 +3,7 @@ const mongodb = require('mongodb');
 const token_Mongo = require('./config_Mongo');
 const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
+const mongo_communication = require('./mongo_communication/test');
 
 const CONNECTION_URL = token_Mongo.tokenMongo;
 // const CONNECTION_URL = "mongodb+srv://:test1324@cluster0-fh2xs.mongodb.net/test?retryWrites=true&w=majority";
@@ -37,27 +38,30 @@ var database;
             return mongodb;
         }
 
-        const test = () => {
+        var getcollection = function getcollection(){
+            return collection;
+        }
 
-            // const collections = mongo.getDb().collection('users')
-            // console.log(collections);
-            // var query = { firstname: "maxime" };
-            collection.find({}).toArray((err, items) => {
-                if (err){
-                     throw err;
-                } else {
-                console.log(items)
-                }
-              })
-              collection.insertOne({
-                            userId: "FUCK",
-                            comment: "YOU",
-                            canal: "CELINE",
-                            movieId: "T KUNE MERDE",
-                            date: new Date()
-                            });
-            //   test();
+    //     const test = () => {
 
+    //         // const collections = mongo.getDb().collection('users')
+    //         // console.log(collections);
+    //         // var query = { firstname: "maxime" };
+    //         collection.find({}).toArray((err, items) => {
+    //             if (err){
+    //                  throw err;
+    //             } else {
+    //             console.log(items)
+    //             }
+    //           })
+    //           collection.insertOne({
+    //                         DREGGMAN : trucmachin,
+    //                         });
+    //         //   test();
+    // }
+    const test = (trucmachin, userID) => {
+        
+        mongo_communication.test(trucmachin, userID);
     }
 
         module.exports = {
@@ -65,8 +69,10 @@ var database;
             connect,
             getDb,
             getMongodb,
+            getcollection,
             test,
         }
+        // exports.test = test;
     
     //     const test = () => {
 

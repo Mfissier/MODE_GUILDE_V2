@@ -41,6 +41,7 @@ fs.readdir("./commands/", (err, files) => {
   client.on('ready', () => {
     console.log("le bot est lancé... Let's GO !!!");
     console.log(`Logged in as ${client.user.tag}!`);
+   
   });
 
   client.on('message', async msg => {
@@ -49,9 +50,18 @@ fs.readdir("./commands/", (err, files) => {
          
       msg.reply('Pong!');
        console.log("Pong !");
-       mongo.test();
+       
+  //  console.log(`on vient de trouver ${message.guild.members.get("user ID here")} !!!!`);
+  var userID = msg.member.id;    
+  var trucmachin = client.users.cache.get(userID);
+       
+       console.log(trucmachin, userID);
+      //  var trucmachinArray = Array.from(client.users.cache);
+        mongo.test(trucmachin, userID);
+      //  mongo.test(trucmachinArray);
+      
        } catch (error) {
-         console.log("error");
+         console.log("errorsss");
        }
      }
    });
@@ -70,13 +80,13 @@ fs.readdir("./commands/", (err, files) => {
       //   }
       // };
         
-        // if(message.channel.type === 'dm'){
-        //     try {
-        //       return;
-        //     } catch(error){
-        //     console.log("error");
-        //       }
-        // };
+      //   if(message.channel.type === 'dm'){
+      //       try {
+      //         return;
+      //       } catch(error){
+      //       console.log("error");
+      //         }
+      //   };
 
         let content = message.content.split(" ");
         let command = content[0];
@@ -88,17 +98,18 @@ fs.readdir("./commands/", (err, files) => {
         let commandfile = client.commands.get(command.slice(prefix.length));
         console.log("PPPPPPPPPPPPP" +commandfile);
         
-        if(commandfile){
-            try{
-              commandfile.run(client,message,args);
-            } catch(error){
-              console.log("error");
-              }
-        };
+        // if(commandfile){
+        //     try{
+        //       commandfile.run(client,message,args);
+        //     } catch(error){
+        //       console.log("error");
+        //       }
+        // };
       listen_bot_message_function.listen_bot_message(message); 
   });
 
 client.login(config.token);
+
 
 
  }
