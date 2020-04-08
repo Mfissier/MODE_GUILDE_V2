@@ -55,7 +55,7 @@ fs.readdir("./commands/", (err, files) => {
   var userID = msg.member.id;    
   var trucmachin = client.users.cache.get(userID);
        
-       console.log(trucmachin, userID);
+      //  console.log(trucmachin, userID);
       //  var trucmachinArray = Array.from(client.users.cache);
         mongo.test(trucmachin, userID);
       //  mongo.test(trucmachinArray);
