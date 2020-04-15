@@ -1,8 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const mongo = require("../../mongo");
+const insert_guilde = require("../../mongo_communication/insert_guilde");
 
-async function fun_args_check_mention_member_(args)
-{
+
+async function fun_args_check_mention_member_(args){
 //___________________________________________..
     //  VARIABLE     ARGS.CONTENT;
     const name_of_guild = args[1];
@@ -58,8 +60,10 @@ async function fun_args_secure_command(message, args)
 
 }
 
-async function FUN_CREATE_GUILDE(message)
-{
+async function FUN_CREATE_GUILDE(message) {
+    
+    
+ 
     args = message.content.split(/ +/g);
     if (await fun_args_secure_command(message, args) == true)
     {
@@ -130,7 +134,21 @@ async function FUN_CREATE_GUILDE(message)
 	} catch(e) {
 		console.error(e);
     }
+    
+///////////////////////////////////////////////// REQUETE BBD ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    var db = mongo.getDb().collection("users");
+    // insert_guilde.insert_guilde();
 
+    db.find({id : "459436742165135370"}).toArray((err, items) => {
+        console.log(items);
+        if (err){
+             throw err;
+        } else {
+            // var tototo = items[0].User_data.username;
+        // console.log("L'items de la function test_get_data : ",items[0].User_data.username);
+        // return (items[0].User_data.username);
+        }
+    });
 //_______________________S T A N D _ B Y E _______________________
 
 //_______________________ T E S T _______________________

@@ -19,12 +19,9 @@ var database;
                 throw error;
             }
             database = client.db(DATABASE_NAME);
+            basedonnee = client.db(DATABASE_NAME);
             collection = database.collection("POPO");
             console.log("Connected to " + DATABASE_NAME +  " la base de donnée!");
-           
-           
-           
-
         })
 
 
@@ -42,23 +39,6 @@ var database;
             return collection;
         }
 
-    //     const test = () => {
-
-    //         // const collections = mongo.getDb().collection('users')
-    //         // console.log(collections);
-    //         // var query = { firstname: "maxime" };
-    //         collection.find({}).toArray((err, items) => {
-    //             if (err){
-    //                  throw err;
-    //             } else {
-    //             console.log(items)
-    //             }
-    //           })
-    //           collection.insertOne({
-    //                         DREGGMAN : trucmachin,
-    //                         });
-    //         //   test();
-    // }
     const test = (trucmachin, userID) => {
         
         mongo_communication.test(trucmachin, userID);
@@ -79,24 +59,5 @@ var database;
             test,
             test_get_data,
         }
-        // exports.test = test;
-    
-    //     const test = () => {
-
-    //         // const collections = mongo.getDb().collection('users')
-    //         // console.log(collections);
-    //         // var query = { firstname: "maxime" };
-    //         collection.find({}).toArray((err, items) => {
-    //             if (err){
-    //                  throw err;
-    //             } else {
-    //             console.log(items)
-    //             }
-    //           })
-    //      
-                
-    //         test(); 
-
-    // }
 
         
