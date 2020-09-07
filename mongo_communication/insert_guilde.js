@@ -1,20 +1,29 @@
-// const mongo = require("../../mongo");
+const mongo = require("../mongo");
 
+const insert_guilde = (
+  p_id,
+  p_name,
+  p_server_id,
+  p_rang_category,
+  p_user_chef_id,
+  p_channels_id,
+  ) => {
+var db = mongo.getDb().collection("guilde_category");
 
-// const insert_guilde = (parametre, parametre2, parametre3 ...ETC) => {
+db.insertOne({
+    id : p_id,
+    name : p_name,
+    type : "",
+    serveur_id : p_server_id,
+    template_status : false,
+    rang_category : p_rang_category,
+    user_chef_id : p_user_chef_id,
+    // channels_id : {
+    //   p_channels_id,
+    // }
+    // Channels_id est un tableau contenant les id auxquelles appartient la fiche de la guilde.
+    // Comment faire ?
+  });
+}
 
-// var db = mongo.getDb().collection("users");
-
-// db.insertOne({
-//     id : parametre
-//     bot : parametre2.boleen,
-//     username : parametre2.name,
-//     discriminator: parametre3.number,
-//     avatar: trucmachin.avatar,
-//     lastMessageID: trucmachin.lastMessageID,
-//     lastMessageChannelID: trucmachin.lastMessageChannelID,
-//   });
-
-// }
-
-// exports.insert_guilde = insert_guilde;
+exports.insert_guilde = insert_guilde;

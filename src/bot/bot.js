@@ -41,7 +41,11 @@ fs.readdir("./commands/", (err, files) => {
   client.on('ready', () => {
     console.log("le bot est lancé... Let's GO !!!");
     console.log(`Logged in as ${client.user.tag}!`);
-   
+    // ALL_ROLES = client.guilds.cache.find(Guild => Guild.roles).roles.cache.map(roles => roles.id);
+    // console.log(ALL_ROLES);
+    //  client.guilds.cache.find(Guild => Guild.roles).roles.cache.find(roles => roles.id === ALL_ROLES[1]).delete();
+
+
   });
 
   client.on('message', async msg => {
@@ -96,7 +100,6 @@ fs.readdir("./commands/", (err, files) => {
 
       //   //checks if message contains a command and runs it
         let commandfile = client.commands.get(command.slice(prefix.length));
-        console.log("PPPPPPPPPPPPP" +commandfile);
         
         // if(commandfile){
         //     try{
@@ -105,7 +108,7 @@ fs.readdir("./commands/", (err, files) => {
         //       console.log("error");
         //       }
         // };
-      listen_bot_message_function.listen_bot_message(message); 
+      listen_bot_message_function.listen_bot_message(message, client); 
   });
 
 client.login(config.token);
