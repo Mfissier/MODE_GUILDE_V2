@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const mongo = require('../../mongo');
 
 const test_data_to_discord = (channel, id) =>{
     console.log("l'id de base est : ",id);

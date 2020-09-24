@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require("../bot");
-const mongo = require('../../../mongo');
 
 // async function fun_take_new_channel_with_id_in_data(message, txt){
 

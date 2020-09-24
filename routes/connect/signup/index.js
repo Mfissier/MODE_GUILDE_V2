@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-
-const mongo = require('../../../mongo');
 const signupModule = require("../../../src/signupModule");
 
 router.post('/', function(req, res, next) {
@@ -13,11 +11,6 @@ router.post('/', function(req, res, next) {
 		const post = req.body;
 
 		signupModule(req, post, null, false, (result, error = 0) => {
-			// console.log(req, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-			// console.log(post, "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-			// console.log(result, "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
-			// console.log(error, "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
-			
 			if (error) {
 				console.log(result)
 				res.status(300).json(result);

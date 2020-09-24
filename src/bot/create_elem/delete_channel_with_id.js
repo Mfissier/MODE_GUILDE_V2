@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require("../bot");
-const mongo = require('../../../mongo');
 //client.login(config.token);
 
 async function delete_channel_with_id(message)
