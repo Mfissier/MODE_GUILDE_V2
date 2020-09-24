@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Mfissier/MODE_GUILDE_REMASTERED#readme",
   "dependencies": {
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
     "discord.js": "^12.1.1",
     "express": "^4.17.1",
