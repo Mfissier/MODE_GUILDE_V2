@@ -3,19 +3,29 @@ const { Collection } = require('mongoose');
 const client = new Discord.Client();
 data_user = require('../bot/data/structjson/user.json');
 data_guilde = require('../bot/data/structjson/guild.json');
+mkdir = require('../bot/data/fun_param/mkdir');
+fs = require('fs');
 
 async function test(message)
 {
+   get_id = message.id;
+   
+}
+  exports.test = test;
 
 
-  //console.log(data_user._user[ 0]);
-  let new_object = Object.assign({},data_user._user[0]);
-  data_user._user.push(new_object);
-  new_object = Object.assign({},data_user._user[0]);
-  data_user._user.push(new_object);
-  data_user._user[2].id = '12334534476';
-  console.log(data_user._user[2]);
-  //data_user._user.push(data_user._user[0]);
+
+
+/*
+
+        "" : 0,
+        "" : 0,
+        "" : 0,
+        "boutique_spam" : false,
+        "cmd_profil_spam" : false,
+        "cmd_stats_spam" : false
+  */
+   //data_user._user.push(data_user._user[0]);
   //data_user._user[0].id = '123';
   //console.log(data_user._user[1]);
     //console.log(data_user._user[0]);
@@ -23,9 +33,16 @@ async function test(message)
     //data_user._user[1] = assign(data_user._user[0], data_user._user[1]);
 
     
-}
-
-
+/*
+          message.channel.send(exampleEmbed)
+              .then(msg => msg.react('✅'))
+              .then(mReaction => mReaction.message.react('❎'))
+              .then(mReaction => {
+              // fun stuff here
+              message.channel.send('ca marche');
+              })
+              .catch(console.log);
+*/
 
     //chercher le nom de tout les channels
     //console.log(message.channel.guild.channels.cache.map(Collection => Collection.name));
@@ -41,7 +58,7 @@ async function test(message)
 
 
 
-exports.test = test;
+
 
 /*
 
@@ -75,3 +92,56 @@ Permet de bann un joueur
 
 
 */
+
+
+/*
+   const reactionFilter = (reaction, user) => reaction.emoji.name === '✅';
+
+const embed = new Discord.MessageEmbed({
+  title: 'Suggestion by someone',
+  description: 'This is a test suggestion. Can you please like it or dislike it :)',
+  fields: [{
+    name: 'Like:',
+    value: '<3'
+  }]
+});
+
+// add reaction emoji to message
+message.channel.send(embed)
+  .then(msg => msg.react('✅'))
+  .then(mReaction => mReaction.message.react('❎'))
+  .then(mReaction => {
+    // createReactionCollector - responds on each react, AND again at the end.
+    const collector = mReaction.message
+      .createReactionCollector(reactionFilter, {
+        time: 15000
+      });
+
+    // set collector events
+    collector.on('collect', r => {
+      // immutably copy embed's Like field to new obj
+      let embedLikeField = Object.assign({}, embed.fields[0]);
+
+      // update 'field' with new value
+      embedLikeField.value = '<3 <3 <3';
+
+      // create new embed with old title & description, new field
+      const newEmbed = new Discord.MessageEmbed({
+        title: 'CAA CHAAANNNGEEE',
+        description: 'This is a test suggestion. Can you please like it or dislike it :)',
+        fields: [{
+          name: 'Like:',
+          value: '<3'
+        }]
+      });
+
+      // edit message with new embed
+      // NOTE: can only edit messages you author
+      r.message.edit(newEmbed)
+        .then(newMsg => console.log(`new embed added`))
+        .catch(console.log);
+    });
+    collector.on('end', collected => console.log(`Collected ${collected.size} reactions`));
+  })
+  .catch(console.log);
+  */

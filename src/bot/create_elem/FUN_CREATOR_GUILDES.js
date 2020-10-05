@@ -2,8 +2,10 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const data_register = require('../data/save_in_data_guild');
 let data_guilde = require('../data/structjson/guild.json');
+data_user = require('../data/structjson/user.json');
+
 var fs = require('fs');
-let mkdir = require('../data/mkdir');
+let mkdir = require('../data/fun_param/mkdir');
 const { JSONCookie } = require('cookie-parser');
 async function FUN_CREATE_GUILDE(message) {    
     // 1° AJOUTER UNE SECURITE POUR QUE SEUL L'ADMIN PUISSE FAIRE CETTE COMMAND !!!
@@ -836,15 +838,6 @@ await message.channel.send('**🔋CHARGEMENT... 60 %🔋\n**Ajout des channels e
         });
         await message.guild.roles.create({
               data: {
-              name: "ESPION",
-              color: 'GOLD',
-              hoist : true,
-              mentionable: true,
-        },
-        reason: 'Create ' + name_of_guild + ' serveur =>' + name_of_serveur,
-        });
-        await message.guild.roles.create({
-              data: {
               name: "BRACONNIER",
               color: 'GOLD',
               hoist : true,
@@ -999,6 +992,7 @@ await message.channel.send('**🔋CHARGEMENT... 60 %🔋\n**Ajout des channels e
                        return;
                    }
                }
+               mkdir.mkdir(path + name_of_guild);
                    // Rajouter le bonne index pour la structure si il y a deja une guilde de creer.
                     data_guilde.guild[files.length - 1]                 =  role_guild.id;
                     data_guilde.category_guild[files.length - 1]        =  DATA_ID_CATEGORY.id; 
@@ -1035,7 +1029,8 @@ await message.channel.send('**🔋CHARGEMENT... 60 %🔋\n**Ajout des channels e
 
                     data_guilde.channel_terminal[files.length - 1]      = id_channel[index_channel_start + 25].id;
                console.log(data_guilde.channel_terminal[files.length - 1]);
-               mkdir.mkdir(path + name_of_guild);
+               
+
                fs.writeFileSync(path + name_of_guild + '/guild.txt',  data_guilde.guild[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/rolemeneur.txt',  data_guilde.rolemeneur[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/user_meneur.txt',  data_guilde.user_meneur[files.length - 1], (err)=>{if (err) console.log("An error happened");});
@@ -1070,6 +1065,18 @@ await message.channel.send('**🔋CHARGEMENT... 60 %🔋\n**Ajout des channels e
                fs.writeFileSync(path + name_of_guild + '/nbr_total_star.txt',  data_guilde.nbr_total_star[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/category_guild.txt',  data_guilde.category_guild[files.length - 1], (err)=>{if (err) console.log("An error happened");});
            });
+
+           await message.channel.send ('!CREATE_ALL_USERS 🤖');
+           for (let i = 1; i < data_user._user.length; i++)
+           {
+               if (data_user._user[i].id == mention_futur_meneur.id)
+               {
+                   data_user._user[i].rang_guild = await role_guild.id;
+                   break;
+               }
+           }
+           await message.channel.send('!SAVE 🤖');
+
 	} catch(e) {
         console.error(e);
     }

@@ -112,7 +112,7 @@ A faire dans <#'+ data_guild.channel_général[i] +'>\n\n\
 Tag les personnes avec qui vous avez effectué un donjon.\n\
 A faire dans <#'+ data_guild.channel_général[i] +'>\n\
 !okdj\n\
-Permet de valider un donjon déclarer par un autre membre.\n\
+Permet de valider un donjon déclaré par un autre membre.\n\
 A faire dans <#'+ data_guild.channel_général[i] +'>\n\
 **Vous gagnerez alors tous 2 étoiles**');
             
@@ -145,7 +145,6 @@ Carte ressources https://dofus-map.com/\n\n\
 http://www.krosmoz.com/fr/almanax\n\n\
 ```#DOFUS PORTALS```\n\
 Chaque portail de dimension https://dofus-portals.fr/portails/66');
-
             break;
         }
     }

@@ -2,9 +2,67 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 data_guilde = require('../structjson/guild.json');
 const fs = require('fs');
-mkdir = require('../mkdir');
+mkdir = require('../fun_param/mkdir');
 let channel_s;
-function bot_to_data_guild(message)
+
+function save_users(message, newpath)
+{
+  for (let i = 1; i < data_user._user.length; i++)
+  {
+          fs.writeFileSync(newpath + data_user._user[i].username + '/register_status.txt', data_user._user[i].register_status , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/id.txt', data_user._user[i].id , (err)=>{if (err) console.log("An error happened");});                  
+          fs.writeFileSync(newpath + data_user._user[i].username + '/username.txt', data_user._user[i].username , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/rang_guild.txt', data_user._user[i].rang_guild , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/purge_exam_rang_status.txt', data_user._user[i].purge_exam_rang_status , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/purge_immu_status.txt', data_user._user[i].purge_immu_status , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/chef_ava_status.txt', data_user._user[i].chef_ava_status , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/liked_for_skins.txt', data_user._user[i].liked_for_skins , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/like_status.txt', data_user._user[i].like_status , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/like_bonus.txt', data_user._user[i].like_bonus , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/grade_discord.txt', data_user._user[i].grade_discord , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/grade_discord_max.txt', data_user._user[i].grade_discord_max , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/exp_discord.txt', data_user._user[i].exp_discord , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/exp_discord_max.txt', data_user._user[i].exp_discord_max , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/stars.txt', data_user._user[i].stars , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/stars_max.txt', data_user._user[i].stars_max , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/kamas_waiting.txt', data_user._user[i].kamas_waiting , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/pts_voc_status.txt', data_user._user[i].pts_voc_status , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/perco_nbr.txt', data_user._user[i].perco_nbr , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/group_id.txt', data_user._user[i].group_id , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/group_status.txt', data_user._user[i].group_status , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/perco_max.txt', data_user._user[i].perco_max , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/perco_defence_nbr.txt', data_user._user[i].perco_defence_nbr , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/perco_attack_nbr.txt', data_user._user[i].perco_attack_nbr , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/mana.txt', data_user._user[i].mana , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/mana_max.txt', data_user._user[i].mana_max , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/box_bonus.txt', data_user._user[i].box_bonus , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/enclot_pt.txt', data_user._user[i].enclot_pt , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/enclos_time.txt', data_user._user[i].enclos_time , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/jackpot_items.txt', data_user._user[i].jackpot_items , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/enclos_dette.txt', data_user._user[i].enclos_dette , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/enclot_grade.txt', data_user._user[i].enclot_grade , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/enclot_exp.txt', data_user._user[i].enclot_exp , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/enclot_malus.txt', data_user._user[i].enclot_malus , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/cheat.txt', data_user._user[i].cheat , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/vocal_status.txt', data_user._user[i].vocal_status , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/vocal_total.txt', data_user._user[i].vocal_total , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/donjon_inscription.txt', data_user._user[i].donjon_inscription , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/date_inscription.txt', data_user._user[i].date_inscription , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/date_last_recrutement.txt', data_user._user[i].date_last_recrutement , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/spam_status.txt', data_user._user[i].spam_status , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/inscription_donjon.txt', data_user._user[i].inscription_donjon , (err)=>{if (err) console.log("An error happened");});
+
+          fs.writeFileSync(newpath + data_user._user[i].username + '/lotterie_status.txt', data_user._user[i].lotterie_status , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/lotterie_total_win.txt', data_user._user[i].lotterie_total_win , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/lotterie_monnaie_played.txt', data_user._user[i].lotterie_monnaie_played , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/lotterie_monnaie_win.txt', data_user._user[i].lotterie_monnaie_win , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/boutique_spam.txt', data_user._user[i].boutique_spam , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/cmd_profil_spam.txt', data_user._user[i].cmd_profil_spam , (err)=>{if (err) console.log("An error happened");});
+          fs.writeFileSync(newpath + data_user._user[i].username + '/cmd_stats_spam.txt', data_user._user[i].cmd_stats_spam , (err)=>{if (err) console.log("An error happened");})
+  }
+
+}
+async function bot_to_data_guild(message)
 {
     let path = __dirname + '/../Save/data_guild/';
     fs.readdir(path, (err, files) => {
@@ -56,5 +114,23 @@ function bot_to_data_guild(message)
                 
            }
        });
+      
+       let newpath = __dirname + '/../Save/data_user/';
+       fs.readdir(newpath, (err, files) => {
+                for (let i = 1; i < data_user._user.length; i++)
+                {
+                  for (let y = 0; y < files.length; y++)
+                  {
+                    if (data_user._user[i].username == undefined)
+                      break;
+                    if (data_user._user[i].username == files[y])
+                      break;
+                    if (y == files.length - 1)
+                      mkdir.mkdir(newpath + data_user._user[i].username);
+                  }
+                }
+                setTimeout(save_users,2000,message,newpath);
+        }); 
+        
 }
 exports.bot_to_data_guild = bot_to_data_guild;
