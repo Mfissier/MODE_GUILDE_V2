@@ -48,7 +48,7 @@ fs.readdir("./commands/", (err, files) => {
     client.commands.set(props.help.name, props);
   });
 });
-client.login('');
+client.login('NzAzOTI2MTE0ODcwODg2NDEw.XqVsSA.xtRtns-SWlaZ6P1W-rrcJN8Edhw');
 //------------------------------ MESSAGE BOT -------------------------------\\
   client.on('ready', () => {
     console.log("le bot est lancé... Let's GO !!!");
