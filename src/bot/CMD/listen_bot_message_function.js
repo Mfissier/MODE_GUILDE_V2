@@ -3,6 +3,7 @@ const  DONJON  = require('../CMD_USERS/DONJON.JS');
 const LIKE  = require('../CMD_USERS/LIKE.JS');
 const STOLE_STARS = require('../CMD_USERS/STOLE_STARS.JS');
 const ADD_USR_IN_GUILD  = require('./CMD_MENEUR/ADD_USR_IN_GUILD');
+<<<<<<< HEAD
 const ADD_RANG_MUSE = require('./CMD_MENEUR/ADD_RANG_MUSE');
 const GROUPE_PERCO = require('../CMD_USERS/GROUPE_PVP');
 const ATAQ_PERCO = require('../CMD_USERS/ATQ_PERCO');
@@ -28,6 +29,29 @@ const DELETE_STARS = require('./CMD_MENEUR/DELETE_STARS');
 const DON = require('../CMD_USERS/USR_DON');
 
 
+=======
+const ADD_BOX_BONUS = require('./CMD_MENEUR/ADD_BOX_BONUS');
+const ADD_GRADE  = require('./CMD_MENEUR/ADD_GRADE');
+const ADD_IMMU_PURGE  = require('./CMD_MENEUR/ADD_IMMU_PURGE');
+const ADD_LIKE_BONUS = require('./CMD_MENEUR/ADD_LIKE_BONUS');
+const ADD_MANA_MAX = require('./CMD_MENEUR/ADD_MANA_MAX');
+const ADD_PERCO_MAX = require('./CMD_MENEUR/ADD_PERCO_MAX');
+const ADD_PERCO_USR = require('./CMD_MENEUR/ADD_PERCO_USR');
+const ADD_XP = require('./CMD_MENEUR/ADD_XP');
+const DELETE_BOX_BONUS = require('./CMD_MENEUR/DELETE_BOX_BONUS');
+const DELETE_IMMU_PURGE  = require('./CMD_MENEUR/DELETE_IMMU_PURGE');
+const DELETE_LIKE_BONUS = require('./CMD_MENEUR/DELETE_LIKE_BONUS');
+const DELETE_MANA_MAX = require('./CMD_MENEUR/DELETE_MANA_MAX');
+const DELETE_PERCO_MAX = require('./CMD_MENEUR/DELETE_PERCO_MAX');
+const DELETE_PERCO_USR = require('./CMD_MENEUR/DELETE_PERCO_USR');
+const DELETE_STARS = require('./CMD_MENEUR/DELETE_STARS');
+const DELETE_XP = require('./CMD_MENEUR/DELETE_XP');
+const DELETE_GRADE  = require('./CMD_MENEUR/DELETE_GRADE');
+const RELOAD_MANA = require('./CMD_MENEUR/RELOAD_MANA');
+const RELOAD_MANA_ALL = require('./CMD_MENEUR/RELOAD_MANA_ALL');
+const RESTART_BONUS_ALL = require('./CMD_MENEUR/RESTART_BONUS_ALL');
+const CHANGE_USR_NAME = require('./CMD_MENEUR/CHANGE_USR_NAME');
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
 PROFIL = require('../CMD_USERS/PROFIL');
 
 
@@ -54,6 +78,7 @@ const CHANGE_USR_NAME = require('./CMD_MENEUR/CHANGE_USR_NAME');
 
 const SPEAK_BOT = require('./SPEAK_BOT');
 const CLEAR = require('./CLEAR.JS');
+
 
 write_in_channel = require('../create_elem/write_in_channel');
 close_and_restart_bot = require('../restart_and_close_bot');
@@ -438,6 +463,7 @@ switch(command[0].toUpperCase()) {
             ADD_BOX_BONUS.ADD_BOX_BONUS(message);
         break;
 
+<<<<<<< HEAD
         case '!ADD_GRADE' :
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
@@ -448,22 +474,41 @@ switch(command[0].toUpperCase()) {
         case '!ADD_IMMU_PURGE' :
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+        case '!ADD_BOX_BONUS' :
+            ADD_BOX_BONUS.ADD_BOX_BONUS(message);
+        break;
+
+        case '!ADD_GRADE' :
+            ADD_GRADE.ADD_GRADE(message);
+        break;
+
+        
+        case '!ADD_IMMU_PURGE' :
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             ADD_IMMU_PURGE.ADD_IMMU_PURGE(message);
         break;
 
         case '!ADD_LIKE_BONUS' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             ADD_LIKE_BONUS.ADD_LIKE_BONUS(message);
         break;
 
         case '!ADD_MANA_MAX' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             ADD_MANA_MAX.ADD_MANA_MAX(message);
         break;
 
         case '!ADD_PERCO_MAX' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
                 ADD_PERCO_MAX.ADD_PERCO_MAX(message);
@@ -472,16 +517,26 @@ switch(command[0].toUpperCase()) {
         case '!ADD_PERCO_USR' :
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+            ADD_PERCO_MAX.ADD_PERCO_MAX(message);
+        break;
+
+        case '!ADD_PERCO_USR' :
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             ADD_PERCO_USR.ADD_PERCO_USR(message);
         break;
 
         case '!ADD_XP' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             ADD_XP.ADD_XP(message);
         break;
 
         case '!DELETE_BOX_BONUS' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
             DELETE_BOX_BONUS.DELETE_BOX_BONUS(message);
@@ -496,16 +551,31 @@ switch(command[0].toUpperCase()) {
         case '!DELETE_LIKE_BONUS' :
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+            DELETE_BOX_BONUS.DELETE_BOX_BONUS(message);
+        break;
+
+
+        case '!DELETE_IMMU_PURGE' :
+            DELETE_IMMU_PURGE.DELETE_IMMU_PURGE(message);
+        break;
+        
+        case '!DELETE_LIKE_BONUS' :
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             DELETE_LIKE_BONUS.DELETE_LIKE_BONUS(message);
         break;
 
         case '!DELETE_MANA_MAX' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             DELETE_MANA_MAX.DELETE_MANA_MAX(message);
         break;
 
         case '!DELETE_PERCO_MAX' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
             DELETE_PERCO_MAX.DELETE_PERCO_MAX(message);
@@ -514,34 +584,55 @@ switch(command[0].toUpperCase()) {
         case '!DELETE_PERCO_USR' :
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+            DELETE_PERCO_MAX.DELETE_PERCO_MAX(message);
+        break;
+
+  
+
+        case '!DELETE_PERCO_USR' :
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             DELETE_PERCO_USR.DELETE_PERCO_USR(message);
         break;
 
         case '!DELETE_STARS' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             DELETE_STARS.DELETE_STARS(message);
         break;
 
         case '!DELETE_XP' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             DELETE_XP.DELETE_XP(message);
         break;
 
         case '!DELETE_GRADE' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             DELETE_GRADE.DELETE_GRADE(message);
         break;
 
         case '!RELOAD_MANA' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
+=======
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
             RELOAD_MANA.RELOAD_MANA(message);
         break;
 
         case '!RELOAD_MANA_ALL' :
+<<<<<<< HEAD
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
             RELOAD_MANA_ALL.RELOAD_MANA_ALL(message);
@@ -550,7 +641,25 @@ switch(command[0].toUpperCase()) {
             console.log('command meneur');
             if (ok_cmd_bd_meneur == 1)
             RESTART_BONUS_ALL.RESTART_BONUS_ALL(message);
+=======
+            RELOAD_MANA_ALL.RELOAD_MANA_ALL(message);
         break;
+        case '!RESTART_BONUS_ALL' :
+            RESTART_BONUS_ALL.RESTART_BONUS_ALL(message);
+        break;
+
+
+        case '!CHANGE_USR_NAME' :
+            CHANGE_USR_NAME.CHANGE_USR_NAME(message);
+        break;
+        
+        case '!H':
+        case '!HELP':
+            help.help(message);
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
+        break;
+        
+
 
 
         case '!CHANGE_USR_NAME' :

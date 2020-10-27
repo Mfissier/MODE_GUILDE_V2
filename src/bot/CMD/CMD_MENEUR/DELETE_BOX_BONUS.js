@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+<<<<<<< HEAD
 const { Collection } = require('mongoose');
+=======
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
 data_user = require('../../data/structjson/user.json');
 data_guilde = require('../../data/structjson/guild.json');
 
@@ -14,6 +17,7 @@ async function DELETE_BOX_BONUS(message)
         {
             if (data_user._user[i].id == member_mention.id)
             {
+<<<<<<< HEAD
                 if (args.length < 3)
                 {
                     message.channel.send('🤖  **Il manque des arguments**');
@@ -37,6 +41,15 @@ async function DELETE_BOX_BONUS(message)
         }
     } else
         message.channel.send('🤖  **Vous avez oublié de mentionner le membre !**');
+=======
+                if (args[2])
+                    data_user._user[i].box_bonus -= parseInt(args[2], 10);
+                message.channel.send('L\'utilisateur a -' + args[2] +'  BOX BONUS');
+                break;
+            }
+        }
+    }
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
 }
 
 exports.DELETE_BOX_BONUS = DELETE_BOX_BONUS;

@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+<<<<<<< HEAD
 const { Collection } = require('mongoose');
+=======
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
 data_user = require('../../data/structjson/user.json');
 data_guilde = require('../../data/structjson/guild.json');
 
@@ -14,6 +17,7 @@ async function DELETE_LIKE_BONUS(message)
         {
 
             if (data_user._user[i].id == member_mention.id)
+<<<<<<< HEAD
             {
                 if (args.length < 2)
                 {
@@ -28,6 +32,20 @@ async function DELETE_LIKE_BONUS(message)
         }
     } else
     message.channel.send('🤖  **Vous avez oublié de mentionner le membre !**');
+=======
+                {
+                    if(args[1])
+                    {
+                        data_user._user[i].like_bonus = false;
+                        console.log("like_bonus_status" + data_user._user[i].like_status);
+                        message.channel.send('Le bonus est disliké =)');
+                        break;
+                    }
+             
+                }
+        }
+    }
+>>>>>>> 4e084d383c8cd2a586ce34b4a9316ebec82c1165
 }
 
 exports.DELETE_LIKE_BONUS = DELETE_LIKE_BONUS;
