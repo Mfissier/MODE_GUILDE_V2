@@ -12,7 +12,7 @@ const reset_Bot = (channel) => {
 const destroy_Bot = (channel) =>  {
     channel.send('🤖 FERMETURE...')
     .then(msg => client.destroy()) 
-    .then(() => client.login('NzAzOTI2MTE0ODcwODg2NDEw.XqVsSA.dimSZi3YftnNfHIEi3MfZO5cFcU'));
+    .then(() => client.login('NzAzOTI2MTE0ODcwODg2NDEw.XqVsSA.gzZ1QvNrkQkx5gGi1LpJd3gHjBc'));
     channel.send('!register');
   }
 

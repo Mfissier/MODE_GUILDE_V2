@@ -16,7 +16,21 @@ async function STOLE_STARS(message)
     /************************************************************ 
                           SECURITY COMMAND;
     *************************************************************/
-
+   let index_channel = message.channel.id;
+   let ok_channel = 0;
+   for (let i = 0; i < data_guilde.channel_général.length; i++)
+   {
+     if (data_guilde.channel_général[i] == index_channel)
+     {
+       ok_channel = 1;
+       break;
+     }
+   }
+   if (ok_channel == 0)
+   {
+     message.channel.send('🤖 **Cette command est utilisable dans le canal 『💭』général !**');
+     return;
+   }
     if (message.mentions.users.first())
     {
         let new_player = message.mentions.users.first();

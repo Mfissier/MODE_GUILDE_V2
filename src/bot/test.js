@@ -4,16 +4,38 @@ const client = new Discord.Client();
 data_user = require('../bot/data/structjson/user.json');
 data_guilde = require('../bot/data/structjson/guild.json');
 mkdir = require('../bot/data/fun_param/mkdir');
+data_perco = require('../bot/data/structjson/perco.json');
+data_tuto = require('./data/structjson/tutoriel.json');
 fs = require('fs');
+
 
 async function test(message)
 {
-   get_id = message.id;
-   
+  for (let i = 0; i < data_user._user.length; i++)
+ {
+  console.log(data_user._user[i].inscription_donjon);
+  console.log(data_user._user[i].username);
+  data_user._user[i].inscription_donjon = 0;
+  data_user._user[i].donjon_inscription = false;
+  }
 }
   exports.test = test;
 
+  // all_member = message.guild.members.cache.map(element => element.user);
+  // role_veteran = message.guild.roles.cache.find(element => element.name == 'PRESENTATION');
+  // console.log(role_veteran);
+  // let member_ad;
+  // for (let i = 0; i < all_member.length; i++)
+  // {
+  //     member_ad = await message.guild.members.cache.find(element => element.id == all_member[i].id);
+  //     await member_ad.roles.add(role_veteran);
+  //     await console.log('ajout du rang presentation');
+  // }
+    
 
+  // console.log(all_member[0].username);
+  // console.log(all_member.length);
+  // console.log(message.guild.members.cache.map(element => element.user));
 
 
 /*

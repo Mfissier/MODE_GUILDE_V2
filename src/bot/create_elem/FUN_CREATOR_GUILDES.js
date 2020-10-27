@@ -3,6 +3,8 @@ const client = new Discord.Client();
 const data_register = require('../data/save_in_data_guild');
 let data_guilde = require('../data/structjson/guild.json');
 data_user = require('../data/structjson/user.json');
+data_systeme_all = require('../data/structjson/all_systeme.json');
+let data_tuto = require('../data/structjson/tutoriel.json');
 
 var fs = require('fs');
 let mkdir = require('../data/fun_param/mkdir');
@@ -42,9 +44,10 @@ args = message.content.split(/ +/g);
                             '『🏆』all_rewards',
                             '____________________', 
                             '『💭』général',
-                            '『🎉』events', 
                             '『🎭』profil', 
-                            '『🛒』boutique', 
+                            '『🤝』groupe',
+                            '『🎉』events', 
+                            '『🛒』boutique',
                             '『🐎』enclos', 
                             '『💀』la-purge',  
                             '『🏛』tribunal',
@@ -55,6 +58,7 @@ args = message.content.split(/ +/g);
                             '『📌』links', 
                             '____________________', 
                             '『👥』staff',  
+                            '『😈』report',
                             '『📋』projet',  
                             '『📊』gestion',  
                             '『✅』staff-mission',
@@ -120,6 +124,7 @@ args = message.content.split(/ +/g);
         name: name_of_guild,
         color: 'BLUE',
         permissions : ["ADD_REACTIONS"],
+        deny : ["VIEW_CHANNEL"], //ICIIICIICIICI
         hoist : true,
         mentionable: true,
         },
@@ -322,29 +327,7 @@ args = message.content.split(/ +/g);
         },
     ],
     });
-    await   message.guild.channels.create('『🎉』events', { reason: 'Nouveau channel pour la guilde' + name_of_guild , parent: DATA_ID_CATEGORY, 
-    permissionOverwrites: [
-        {
-            id: role_guild,
-            allow: ['VIEW_CHANNEL', 'READ_MESSAGE_HISTORY','ADD_REACTIONS'],
-            deny : ['SEND_MESSAGES'],
-        },
-        {
-            id: role_meneur,
-            allow: ['VIEW_CHANNEL','SEND_MESSAGES','MANAGE_MESSAGES','ADD_REACTIONS','MENTION_EVERYONE','READ_MESSAGE_HISTORY'],
-        },
-        {
-            id: role_brasdroit,
-            allow: ['VIEW_CHANNEL','SEND_MESSAGES','MANAGE_MESSAGES','ADD_REACTIONS','MENTION_EVERYONE','READ_MESSAGE_HISTORY'],
-        },
-        {
-            id: role_conseiller,
-            allow: ['VIEW_CHANNEL','ADD_REACTIONS','READ_MESSAGE_HISTORY', 'SEND_MESSAGES'],
-            // deny : ['SEND_MESSAGES'],
-        },
-    ],
-});
-await   message.guild.channels.create('『🎭』profil', { reason: 'Nouveau channel pour la guilde' + name_of_guild , parent: DATA_ID_CATEGORY, 
+    await   message.guild.channels.create('『🎭』profil', { reason: 'Nouveau channel pour la guilde' + name_of_guild , parent: DATA_ID_CATEGORY, 
 permissionOverwrites: [
     {
         id: role_guild,
@@ -367,6 +350,53 @@ permissionOverwrites: [
     },
 ],
 });
+    await   message.guild.channels.create('『🤝』groupe', { reason: 'Nouveau channel pour la guilde' + name_of_guild , parent: DATA_ID_CATEGORY, 
+permissionOverwrites: [
+    {
+        id: role_guild,
+        allow: ['VIEW_CHANNEL', 'READ_MESSAGE_HISTORY','ADD_REACTIONS','SEND_MESSAGES'],
+        // deny : ['SEND_MESSAGES'],
+    },
+    {
+        id: role_meneur,
+        allow: ['VIEW_CHANNEL','SEND_MESSAGES','MANAGE_MESSAGES','ADD_REACTIONS','MENTION_EVERYONE','READ_MESSAGE_HISTORY'],
+    },
+    {
+        id: role_brasdroit,
+        allow: ['VIEW_CHANNEL','MANAGE_MESSAGES','ADD_REACTIONS','MENTION_EVERYONE','READ_MESSAGE_HISTORY','SEND_MESSAGES'],
+        // deny : ['SEND_MESSAGES'],
+    },
+    {
+        id: role_conseiller,
+        allow: ['VIEW_CHANNEL','ADD_REACTIONS','READ_MESSAGE_HISTORY','SEND_MESSAGES'],
+        // deny : ['SEND_MESSAGES'],
+    },
+    // Rajotuer permission au Meneur de voir tout les channels... Tout faire dessus.
+],
+});
+    await   message.guild.channels.create('『🎉』events', { reason: 'Nouveau channel pour la guilde' + name_of_guild , parent: DATA_ID_CATEGORY, 
+    permissionOverwrites: [
+        {
+            id: role_guild,
+            allow: ['VIEW_CHANNEL', 'READ_MESSAGE_HISTORY','ADD_REACTIONS'],
+            deny : ['SEND_MESSAGES'],
+        },
+        {
+            id: role_meneur,
+            allow: ['VIEW_CHANNEL','SEND_MESSAGES','MANAGE_MESSAGES','ADD_REACTIONS','MENTION_EVERYONE','READ_MESSAGE_HISTORY'],
+        },
+        {
+            id: role_brasdroit,
+            allow: ['VIEW_CHANNEL','SEND_MESSAGES','MANAGE_MESSAGES','ADD_REACTIONS','MENTION_EVERYONE','READ_MESSAGE_HISTORY'],
+        },
+        {
+            id: role_conseiller,
+            allow: ['VIEW_CHANNEL','ADD_REACTIONS','READ_MESSAGE_HISTORY', 'SEND_MESSAGES'],
+            // deny : ['SEND_MESSAGES'],
+        },
+    ],
+});
+
 await   message.guild.channels.create('『🛒』boutique', { reason: 'Nouveau channel pour la guilde' + name_of_guild , parent: DATA_ID_CATEGORY, 
 permissionOverwrites: [
     {
@@ -607,6 +637,29 @@ await   message.guild.channels.create('『👥』staff', { reason: 'Nouveau chan
 permissionOverwrites: [
     {
         id: role_guild,
+        allow: ['VIEW_CHANNEL', 'READ_MESSAGE_HISTORY','SEND_MESSAGES'],
+        deny : ['ADD_REACTIONS'],
+    },
+    {
+        id: role_meneur,
+        allow: ['VIEW_CHANNEL','SEND_MESSAGES','MANAGE_MESSAGES','ADD_REACTIONS','MENTION_EVERYONE','READ_MESSAGE_HISTORY'],
+    },
+    {
+        id: role_brasdroit,
+        allow: ['VIEW_CHANNEL','MANAGE_MESSAGES','ADD_REACTIONS','MENTION_EVERYONE','READ_MESSAGE_HISTORY','SEND_MESSAGES'],
+        // deny : ['SEND_MESSAGES'],
+    },
+    {
+        id: role_conseiller,
+        allow: ['VIEW_CHANNEL','ADD_REACTIONS','READ_MESSAGE_HISTORY','SEND_MESSAGES'],
+        //deny : ['SEND_MESSAGES'],
+    },
+],
+});
+await   message.guild.channels.create('『😈』report', { reason: 'Nouveau channel pour la guilde' + name_of_guild , parent: DATA_ID_CATEGORY, 
+permissionOverwrites: [
+    {
+        id: role_guild,
         allow: ['VIEW_CHANNEL', 'READ_MESSAGE_HISTORY','ADD_REACTIONS','SEND_MESSAGES'],
         // deny : ['SEND_MESSAGES'],
     },
@@ -630,7 +683,6 @@ await   message.guild.channels.create('『📋』projet', { reason: 'Nouveau cha
 permissionOverwrites: [
     {
         id: role_guild,
-        allow: ['ADD_REACTIONS'],
         deny : ['SEND_MESSAGES','VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     },
     {
@@ -653,7 +705,6 @@ await   message.guild.channels.create('『📊』gestion', { reason: 'Nouveau ch
 permissionOverwrites: [
     {
         id: role_guild,
-        allow: ['ADD_REACTIONS'],
         deny : ['SEND_MESSAGES','VIEW_CHANNEL', 'READ_MESSAGE_HISTORY'],
     },
     {
@@ -676,8 +727,7 @@ await   message.guild.channels.create('『✅』staff-mission', { reason: 'Nouve
 permissionOverwrites: [
     {
         id: role_guild,
-        allow: ['VIEW_CHANNEL', 'READ_MESSAGE_HISTORY','ADD_REACTIONS'],
-        deny : ['SEND_MESSAGES'],
+        deny : ['SEND_MESSAGES', 'VIEW_CHANNEL'],
     },
     {
         id: role_meneur,
@@ -762,7 +812,143 @@ await message.channel.send('**🔋CHARGEMENT... 60 %🔋\n**Ajout des channels e
     await message.channel.send('**🔋CHARGEMENT... 75 %🔋**\nSauvegarde des channels dans la data de la guilde ' + name_of_guild + ' !\n\n');
     if (message.guild.roles.cache.find(Collection => Collection.name == 'ESPION') == undefined)
     {  
-        message.channel.send('**🔋CHARGEMENT... 77 %🔋**\nLes roles de bases n\'ont pas été créés !');
+        await message.channel.send('**🔋CHARGEMENT... 77 %🔋**\nLes roles de bases n\'ont pas été créés !');
+        
+//CREATE_TUTORIEL
+//CREATION ROLES POUR CES CHANNELS
+await message.guild.roles.create({
+    data: {
+    name: "PRESENTATION",
+    color: 'WHITE',
+    hoist : true,
+    mentionable: true,
+},
+reason: 'Create ' + name_of_guild + ' serveur =>' + name_of_serveur,
+});
+
+await message.guild.roles.create({
+    data: {
+    name: "FAQ",
+    color: 'WHITE',
+    hoist : true,
+    mentionable: true,
+},
+reason: 'Create ' + name_of_guild + ' serveur =>' + name_of_serveur,
+});
+
+await message.guild.roles.create({
+    data: {
+    name: "BIENVENU",
+    color: 'WHITE',
+    hoist : true,
+    mentionable: true,
+},
+reason: 'Create ' + name_of_guild + ' serveur =>' + name_of_serveur,
+});
+let tuto_rang_presentation = await message.guild.roles.cache.find(Role => Role.name === 'PRESENTATION');
+let tuto_rang_faq = await message.guild.roles.cache.find(Role => Role.name === 'FAQ');
+let tuto_rang_bienvenue = await message.guild.roles.cache.find(Role => Role.name === 'BIENVENU');
+
+data_tuto.rang_presentation = await tuto_rang_presentation.id;
+data_tuto.rang_faq = await tuto_rang_faq.id;
+data_tuto.rang_bienvenue = await tuto_rang_bienvenue.id;
+
+await   message.guild.channels.create('『📋』présentation', { reason: 'Nouveau channel pour la guilde' + name_of_guild , 
+permissionOverwrites: [
+    {
+        id: role_guild,
+        deny : ['VIEW_CHANNEL']
+    },
+    {
+        id :tuto_rang_presentation,
+        allow: ['VIEW_CHANNEL', 'READ_MESSAGE_HISTORY','ADD_REACTIONS','SEND_MESSAGES'],
+    },
+    {
+        id: role_meneur,
+        deny : ['VIEW_CHANNEL']
+    },
+    {
+        id: role_brasdroit,
+        deny : ['VIEW_CHANNEL']
+        // deny : ['SEND_MESSAGES'],
+    },
+    {
+        id: role_conseiller,
+        deny : ['VIEW_CHANNEL']
+        // deny : ['SEND_MESSAGES'],
+    },
+
+],
+});
+let tuto_channel_presentation = await message.guild.channels.cache.find(Collection => Collection.name == '『📋』présentation');
+data_tuto.channel_presentation = await tuto_channel_presentation.id;
+
+
+
+await   message.guild.channels.create('『📋』faq', { reason: 'Nouveau channel pour la guilde' + name_of_guild ,
+permissionOverwrites: [
+    {
+        id: role_guild,
+        deny : ['VIEW_CHANNEL']
+    },
+    {
+        id :tuto_rang_faq,
+        allow: ['VIEW_CHANNEL', 'READ_MESSAGE_HISTORY','ADD_REACTIONS','SEND_MESSAGES'],
+    },
+    {
+        id: role_meneur,
+        deny : ['VIEW_CHANNEL']
+    },
+    {
+        id: role_brasdroit,
+        deny : ['VIEW_CHANNEL']
+        // deny : ['SEND_MESSAGES'],
+    },
+    {
+        id: role_conseiller,
+        deny : ['VIEW_CHANNEL']
+        // deny : ['SEND_MESSAGES'],
+    },
+],
+});
+let tuto_channel_faq = await message.guild.channels.cache.find(Collection => Collection.name == '『📋』faq');
+data_tuto.channel_faq = await tuto_channel_faq.id;
+
+
+await   message.guild.channels.create('『📋』bienvenu', { reason: 'Nouveau channel pour la guilde' + name_of_guild ,
+permissionOverwrites: [
+    {
+        id: role_guild,
+        allow: ['READ_MESSAGE_HISTORY','ADD_REACTIONS','VIEW_CHANNEL'],
+        deny : ['SEND_MESSAGES'],
+    },
+    {
+        id: role_meneur,
+        allow: ['VIEW_CHANNEL','SEND_MESSAGES','MANAGE_MESSAGES','ADD_REACTIONS','MENTION_EVERYONE','READ_MESSAGE_HISTORY'],
+    },
+    {
+        id :tuto_rang_presentation,
+        allow: ['VIEW_CHANNEL', 'READ_MESSAGE_HISTORY','ADD_REACTIONS','SEND_MESSAGES'],
+    },
+    {
+        id: role_brasdroit,
+        allow: ['VIEW_CHANNEL','MANAGE_MESSAGES','ADD_REACTIONS','MENTION_EVERYONE','READ_MESSAGE_HISTORY','SEND_MESSAGES'],
+        // deny : ['SEND_MESSAGES'],
+    },
+    {
+        id: role_conseiller,
+        allow: ['VIEW_CHANNEL','ADD_REACTIONS','READ_MESSAGE_HISTORY','SEND_MESSAGES'],
+        // deny : ['SEND_MESSAGES'],
+    },
+
+],
+});
+let tuto_channel_bienvenue = await message.guild.channels.cache.find(Collection => Collection.name == '『📋』bienvenu');
+data_tuto.channel_bienvenue = await tuto_channel_bienvenue.id;
+//_______________
+
+
+
 
         await message.guild.roles.create({
             data: {
@@ -782,6 +968,15 @@ await message.channel.send('**🔋CHARGEMENT... 60 %🔋\n**Ajout des channels e
         },
         reason: 'Create ' + name_of_guild + ' serveur =>' + name_of_serveur,
         });
+        await message.guild.roles.create({
+            data: {
+            name: "MUSE",
+            color: 'GOLD',
+            hoist : true,
+            mentionable: true,
+      },
+      reason: 'Create ' + name_of_guild + ' serveur =>' + name_of_serveur,
+      });
         await message.guild.roles.create({
               data: {
               name: "PROTECTEUR",
@@ -864,6 +1059,7 @@ await message.channel.send('**🔋CHARGEMENT... 60 %🔋\n**Ajout des channels e
       },
       reason: 'Create ' + name_of_guild + ' serveur =>' + name_of_serveur,
       });
+
       await message.guild.roles.create({
             data: {
             name: "BOULET",
@@ -1010,24 +1206,26 @@ await message.channel.send('**🔋CHARGEMENT... 60 %🔋\n**Ajout des channels e
                     data_guilde.channel_transferts[files.length - 1]    = id_channel[index_channel_start + 4].id;
                     data_guilde.channel_all_rewards[files.length - 1]   = id_channel[index_channel_start + 5].id;
                     data_guilde.channel_général[files.length - 1]       = id_channel[index_channel_start + 7].id;
-                    data_guilde.channel_events[files.length - 1]        = id_channel[index_channel_start + 8].id;
-                    data_guilde.channel_profil[files.length - 1]        = id_channel[index_channel_start + 9].id;
-                    data_guilde.channel_boutique[files.length - 1]      = id_channel[index_channel_start + 10].id;
-                    data_guilde.channel_enclos[files.length - 1]        = id_channel[index_channel_start + 11].id;
-                    data_guilde.channel_la_purge[files.length - 1]      = id_channel[index_channel_start + 12].id;
-                    data_guilde.channel_tribunal[files.length - 1]      = id_channel[index_channel_start + 13].id;
-                    data_guilde.channel_command[files.length - 1]       = id_channel[index_channel_start + 15].id;
-                    data_guilde.channel_rangs[files.length - 1]         = id_channel[index_channel_start + 16].id;
-                    data_guilde.channel_questions[files.length - 1]     = id_channel[index_channel_start + 17].id;
-                    data_guilde.channel_links[files.length - 1]         = id_channel[index_channel_start + 18].id;
-                    data_guilde.channel_staff[files.length - 1]         = id_channel[index_channel_start + 20].id;
-                    data_guilde.channel_projet[files.length - 1]        = id_channel[index_channel_start + 21].id;
-                    data_guilde.channel_gestion[files.length - 1]       = id_channel[index_channel_start + 22].id;
-                    data_guilde.channel_staff_mission[files.length - 1] = id_channel[index_channel_start + 23].id;
-                    data_guilde.channel_command_staff[files.length - 1] = id_channel[index_channel_start + 24].id;
+                    data_guilde.channel_profil[files.length - 1]        = id_channel[index_channel_start + 8].id;//changement
+                    data_guilde.channel_groupe[files.length - 1]        = id_channel[index_channel_start + 9].id;//chabgelent
+                    data_guilde.channel_events[files.length - 1]        = id_channel[index_channel_start + 10].id;
+                    data_guilde.channel_boutique[files.length - 1]      = id_channel[index_channel_start + 11].id;
+                    data_guilde.channel_enclos[files.length - 1]        = id_channel[index_channel_start + 12].id;
+                    data_guilde.channel_la_purge[files.length - 1]      = id_channel[index_channel_start + 13].id;
+                    data_guilde.channel_tribunal[files.length - 1]      = id_channel[index_channel_start + 14].id;
+                    data_guilde.channel_command[files.length - 1]       = id_channel[index_channel_start + 16].id;
+                    data_guilde.channel_rangs[files.length - 1]         = id_channel[index_channel_start + 17].id;
+                    data_guilde.channel_questions[files.length - 1]     = id_channel[index_channel_start + 18].id;
+                    data_guilde.channel_links[files.length - 1]         = id_channel[index_channel_start + 19].id;
+                    data_guilde.channel_staff[files.length - 1]         = id_channel[index_channel_start + 21].id;
+                    data_guilde.channel_report[files.length - 1]        = id_channel[index_channel_start + 22].id;
+                    data_guilde.channel_projet[files.length - 1]        = id_channel[index_channel_start + 23].id;
+                    data_guilde.channel_gestion[files.length - 1]       = id_channel[index_channel_start + 24].id;
+                    data_guilde.channel_staff_mission[files.length - 1] = id_channel[index_channel_start + 25].id;
+                    data_guilde.channel_command_staff[files.length - 1] = id_channel[index_channel_start + 26].id;
                     data_guilde.nbr_total_star[files.length - 1]        = 0;
 
-                    data_guilde.channel_terminal[files.length - 1]      = id_channel[index_channel_start + 25].id;
+                    data_guilde.channel_terminal[files.length - 1]      = id_channel[index_channel_start + 27].id;
                console.log(data_guilde.channel_terminal[files.length - 1]);
                
 
@@ -1048,6 +1246,7 @@ await message.channel.send('**🔋CHARGEMENT... 60 %🔋\n**Ajout des channels e
                fs.writeFileSync(path + name_of_guild + '/channel_général.txt',  data_guilde.channel_général[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/channel_events.txt',  data_guilde.channel_events[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/channel_profil.txt',  data_guilde.channel_profil[files.length - 1], (err)=>{if (err) console.log("An error happened");});
+               fs.writeFileSync(path + name_of_guild + '/channel_groupe.txt',  data_guilde.channel_groupe[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/channel_boutique.txt',  data_guilde.channel_boutique[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/channel_enclos.txt',  data_guilde.channel_enclos[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/channel_la_purge.txt',  data_guilde.channel_la_purge[files.length - 1], (err)=>{if (err) console.log("An error happened");});
@@ -1057,6 +1256,7 @@ await message.channel.send('**🔋CHARGEMENT... 60 %🔋\n**Ajout des channels e
                fs.writeFileSync(path + name_of_guild + '/channel_questions.txt',  data_guilde.channel_questions[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/channel_links.txt',  data_guilde.channel_links[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/channel_staff.txt',  data_guilde.channel_staff[files.length - 1], (err)=>{if (err) console.log("An error happened");});
+               fs.writeFileSync(path + name_of_guild + '/channel_report.txt',  data_guilde.channel_report[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/channel_projet.txt',  data_guilde.channel_projet[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/channel_gestion.txt',  data_guilde.channel_gestion[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/channel_staff_mission.txt',  data_guilde.channel_staff_mission[files.length - 1], (err)=>{if (err) console.log("An error happened");});
@@ -1064,6 +1264,7 @@ await message.channel.send('**🔋CHARGEMENT... 60 %🔋\n**Ajout des channels e
                fs.writeFileSync(path + name_of_guild + '/channel_terminal.txt',  data_guilde.channel_terminal[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/nbr_total_star.txt',  data_guilde.nbr_total_star[files.length - 1], (err)=>{if (err) console.log("An error happened");});
                fs.writeFileSync(path + name_of_guild + '/category_guild.txt',  data_guilde.category_guild[files.length - 1], (err)=>{if (err) console.log("An error happened");});
+               fs.writeFileSync(path + name_of_guild + '/value_stars.txt',  data_guilde.value_stars[files.length - 1], (err)=>{if (err) console.log("An error happened");});
            });
 
            await message.channel.send ('!CREATE_ALL_USERS 🤖');

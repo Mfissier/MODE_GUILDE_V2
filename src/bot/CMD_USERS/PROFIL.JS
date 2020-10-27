@@ -5,13 +5,27 @@ const client = new Discord.Client();
 data_user = require('../data/structjson/user.json');
 data_guilde = require('../data/structjson/guild.json');
 
-async function PROFIL(message)
+  async function PROFIL(message)
 {
     args = message.content.split(/ +/g);
     /************************************************************ 
                           SECURITY COMMAND;
     *************************************************************/
-
+    let index_channel = message.channel.id;
+    let ok_channel = 0;
+    for (let i = 0; i < data_guilde.channel_profil.length; i++)
+    {
+      if (data_guilde.channel_profil[i] == index_channel)
+      {
+        ok_channel = 1;
+        break;
+      }
+    }
+    if (ok_channel == 0)
+    {
+      message.channel.send('🤖 **Cette command est utilisable dans le canal 『🎭』profil !**');
+      return;
+    }
     if (message.mentions.users.first())
     {
       new_player = message.mentions.users.first();
@@ -28,7 +42,7 @@ async function PROFIL(message)
               { name: '⭐  **'+data_user._user[i].stars + '/'+ data_user._user[i].stars_max+ '**', value: '💧  **'+data_user._user[i].mana + '/'  + data_user._user[i].mana_max +'**' },
               { name: '\u200B', value: '\u200B' },
               { name: '🐴  '+data_user._user[i].perco_nbr + '/'+ data_user._user[i].perco_max, value: '**🗡️  ATQ  ' + data_user._user[i].perco_attack_nbr+ '** ', inline: true },
-              { name: '**🛡️  DEF  ' + data_user._user[i].perco_defence_nbr+ '**', value: '⏳ '+ data_user._user[i].kamas_waiting, inline: false }
+              { name: '**🛡️  DEF  ' + data_user._user[i].perco_defence_nbr+ '**', value: '💰 '+ data_user._user[i].kamas_waiting, inline: false }
             )  
           message.channel.send(exampleEmbed);
           return;
@@ -54,7 +68,7 @@ async function PROFIL(message)
             { name: '⭐  **'+data_user._user[i].stars + '/'+ data_user._user[i].stars_max+ '**', value: '💧  **'+data_user._user[i].mana + '/'  + data_user._user[i].mana_max +'**' },
             { name: '\u200B', value: '\u200B' },
             { name: '🐴  '+data_user._user[i].perco_nbr + '/'+ data_user._user[i].perco_max, value: '**🗡️  ATQ  ' + data_user._user[i].perco_attack_nbr+ '** ', inline: true },
-            { name: '**🛡️  DEF  ' + data_user._user[i].perco_defence_nbr+ '**', value: '⏳ '+ data_user._user[i].kamas_waiting, inline: false }
+            { name: '**🛡️  DEF  ' + data_user._user[i].perco_defence_nbr+ '**', value: '💰 '+ data_user._user[i].kamas_waiting, inline: false }
           )  
         message.channel.send(exampleEmbed);
         return;

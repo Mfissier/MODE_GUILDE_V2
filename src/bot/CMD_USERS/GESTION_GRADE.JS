@@ -7,7 +7,9 @@ data_guilde = require('../data/structjson/guild.json');
 
 function GESTION_GRADE(idmember, nbr_xp, message)
 {
-        for (let i = 1; i < data_user._user.length; i++)
+    let index_channel = message.channel.id;
+    let index_guilde;
+        for (let i = 0; i < data_user._user.length; i++)
         {
             if (data_user._user[i].id == idmember)
             {
@@ -29,8 +31,7 @@ function GESTION_GRADE(idmember, nbr_xp, message)
                         if (!channel_s)
                             return;
                         channel_s.send('**Le membre <@!'+ data_user._user[i].id +'> a monté d\'un grade [+ 1 ⭐] !**');
-                    }
-                    
+                    }   
                 }
             }
         }

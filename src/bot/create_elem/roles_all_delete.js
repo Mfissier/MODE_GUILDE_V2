@@ -12,7 +12,7 @@ async function roles_all_delete(message, client)
         await console.log(ALL_ROLES);
         for(let i = 0; i < ALL_ROLES.length; i++)
         {
-            if (ALL_ROLES[i] == '760899355116306433' || ALL_ROLES[i] == '760899068502343730' || ALL_ROLES[i] == '757543368502018149')
+            if (ALL_ROLES[i] == '765130617590644758' || ALL_ROLES[i] == '440797586937610240' || ALL_ROLES[i] ==  '440844359211155468' || ALL_ROLES[i] ==  '607153802906173460' || ALL_ROLES[i] == '602315287991156746')
             {
                 console.log('Rang check');
             } else

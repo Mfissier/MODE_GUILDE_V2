@@ -9,7 +9,8 @@
     "conseiller" : [],   
     "staff" : [],
     "coffre_guild": [],
-
+    "value_stars" : [],
+    
     "nbr_total_star": [], 
     "nbr_de_membre" : [], 
     "usr_moyenne_level": [],
@@ -27,6 +28,7 @@
     "channel_général": [],
     "channel_events": [],
     "channel_profil": [],
+    "channel_groupe" : [],
     "channel_boutique": [],
     "channel_enclos": [],
     "channel_la_purge": [],
@@ -36,6 +38,7 @@
     "channel_questions": [],
     "channel_links": [],
     "channel_staff": [],
+    "channel_report" : [],
     "channel_projet": [],
     "channel_gestion": [],
     "channel_staff_mission": [],

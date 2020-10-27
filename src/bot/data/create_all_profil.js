@@ -31,6 +31,9 @@ async function create_all_profil(message)
               data_user._user[data_user._user.length - 1].id = await new_user.user.id;
               data_user._user[data_user._user.length - 1].username = await new_user.user.username;
               data_user._user[data_user._user.length - 1].avatar = await new_user.user.avatar;
+              data_user._user[data_user._user.length - 1].stars = await 0;
+              data_user._user[data_user._user.length - 1].rang_guild = "765135892913717299";
+                
               break;
             }
         }
