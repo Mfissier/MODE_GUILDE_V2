@@ -1,1 +1,0 @@
-# MODE_GUILDE_V2
