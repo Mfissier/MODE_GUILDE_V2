@@ -1,0 +1,507 @@
+
+//------------------------------------------------------------------
+//SECTION BOUTIQUE
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+//FONCTION fun_achat_mana :
+🤖 **Vous n'avez pas assez de** :star: !\
+
+"🤖 **Votre :droplet: a été réinitialisé !\
+
+"🤖 **Vous avez gagné 1 pts de :droplet:, votre mana a été réinitialisé ! (-"+ data_boutique.prix_mana +" :star:)**\
+
+"**🤖 Le membre <@"+ data_user._user[index_user].id +"> a gagné 1 pts de :droplet: max (-"+ data_boutique.prix_mana +" :star:)!**\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+// FONCTION fun_achat_migration :
+
+🤖 **Vous n\'avez pas mentionné le rang de la guilde dans laquelle vous voulez migrer !\nOu cette Guilde n'existe pas...**\
+
+🤖 **Vous n\'avez pas assez de :star: pour migrer de guilde !**\
+
+🤖 **Vous êtes déjà dans cette guilde !**\
+
+**🤖 Le membre <@"+ message.member.id +"> veux migrer dans votre guilde !**\n\
+> **__pseudo__ :"+ data_user._user[index_user].username +"**\n\
+> **__Guilde actuelle__** : <@&"+ data_user._user[index_user].rang_guild +">\n\
+``` ```✅ (**valider**) \n> ❌ (**annuler**) \n> 💀 (**Kik**)\
+🤖 **Vous n\'avez pas mentionné le rang de la guilde dans laquelle vous voulez migrer !\nOu cette Guilde n'existe pas...**\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+//FONCTION fun_achat_percepteur : 
+
+🤖 **Vous n'avez pas assez de** :star: !\
+
+🤖 **Vous ne pouvez pas poser plus de 4 percepteurs !**\
+
+🤖 **Vous avez gagné le droit de poser 1 percepteur ! (-"+ (data_user._user[index_user].perco_nbr) * 15 +" :star:)**\
+
+🤖 **Vous avez gagné le droit de poser 1 percepteur en plus ! (-"+ (data_user._user[index_user].perco_nbr) * 15 +" :star:)**\
+
+<@&"+ data_guild._guild[index_guild].guild +">\n**Le membre <@"+ data_user._user[index_user].id +"> a gagné le droit de poser 1 percepteur **\
+
+**🤖 Le membre <@"+ data_user._user[index_user].id +"> a gagné le droit de poser 1 percepteur! (-"+ (data_user._user[index_user].perco_nbr) * 15 +" :star:)**\
+
+Tu as reçu le droit de poser un percepteur ! :star:\n\n\
+**Tu as des choses à savoir lorsque tu récoltera tes futurs percepteurs:**\n\
+``1`` Tu devras obligatoirement utiliser la commande !taxe en mettant la valeur de ce que tu as récolté.\n\
+``2`` Une fois fais, je te dirai quoi mettre dans le coffre de guilde\n\n\
+**Pour remplir le coffre :**\n\
+``1`` Connecte toi en jeu et va dans le bulletin de ta guilde\n\
+``2`` Rends toi à la position où ton Meneur sera en mode Marchand\n\
+``3`` Achète des items du montant de la taxe que tu dois payer !\n\
+**A bientôt !** \n\
+
+**🤖 Le membre <@"+ data_user._user[index_user].id +"> a gagné le droit de poser 1 percepteur en plus (-"+ (data_user._user[index_user].perco_nbr) * 15 +" :star:) !**\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+// FONCTION fun_achat_rang_braconnier :
+
+🤖 **Vous avez déjà ce rang !**\
+
+🤖 **Vous n'avez pas assez de :star: pour acheter ce rang !**\
+
+** 🤖 Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __BRACONNIER__ !!! (-"+ data_boutique.prix_rang_braconnier +" :star:)**\
+
+🤖 **Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __BRACONNIER__ !!! (-"+ data_boutique.prix_rang_braconnier +" :star:)**\
+
+**Tu as acheté le rang BRACONNIER**\n\
+*Pour l'utiliser il te faut faire un peu de commerce avec les membre de la Corporation !*\n\n\
+Si quelqu'un demande à se faire monter des dragodindes level 5... Hé ben ! Ce sera à toi d'agir !\n\
+Une fois les DD up et livrée à ton client fais la commande :\n\
+> **!UPDD @mention [NBR]**\n\
+exemple : !UPDD @pseudo_de_ton_client 30\n\
+Ton client n'a plus qu'a valider\n\
+Ici tu aura livré 30 dragodindes à un membre\n\
+Tu gagnes des :star: tout les 10 dragodindes que tu montes\n\
+*Cette commande ce fait dans le canal Braconnier (Catégorie Métier)*\n\
+!!! N'oublis pas de mettre un screen de l'échange !!!\n\
+A bientôt !\n\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+// FONCTION fun_achat_rang_chercheur :
+
+🤖 **Vous avez déjà ce rang !**\
+
+🤖 **Vous n'avez pas assez de :star: pour acheter ce rang !**\
+
+** 🤖 Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __CHERCHEUR__ !!! (-"+ data_boutique.prix_rang_chercheur+" :star:)**\
+
+🤖 **Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __CHERCHEUR__ !!! (-"+ data_boutique.prix_rang_chercheur+" :star:)**\
+
+**Tu as acheté le rang CHERCHEUR DE TRESOR**\n\
+*Ta Mission est de trouver les Percepteurs des autres Alliances du serveur*\n\
+> *N'oublis pas que grâce à toi, la guilde connait les meilleurs positions pour poser*\n\
+> *De plus ! Sans toi, la guerre sera difficile !*\n\
+*Tout est expliqué dans le canal #『🔎』𝐂𝐡𝐞𝐫𝐜𝐡𝐞𝐮𝐫*\n\
+A bientôt !\n\
+
+<@&"+ data_guild._guild[index_guild].guild +">\n**Le membre <@!"+ data_user._user[index_user].id +"> dois recevoir le rang Chercheur de Trésor en jeu**\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+//FONCTION fun_achat_rang_espion :
+
+🤖 **Vous avez déjà ce rang !**\
+
+🤖 **Vous n'avez pas assez de :star: pour acheter ce rang !**\
+
+** 🤖 Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __ESPION__ !!! (-"+ data_boutique.prix_rang_espion+" :star:)**\
+
+🤖 **Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __ESPION__ !!! (-"+ data_boutique.prix_rang_espion+" :star:)**\
+
+Tu as acheté le Rang ESPION\n\
+*Ta mission est de rendre la guilde vivante en faisant des sorties*\n\
+**Tu peux utiliser la commande !donjon @mention [@...] dans le canal 『🔪』𝐄𝐬𝐩𝐢𝐨𝐧**\n\
+> Les aides pour allé sur les dalles en groupes sont valides !\n\
+> N'oublis pas de mettre une preuve après validation (screen du combat ou autre...)\n\
+**A bientôt**\n\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+//FONCTION fun_achat_rang_muse :
+
+🤖 **Vous avez déjà ce rang !**\
+
+🤖 **Vous n'avez pas assez de :star: pour acheter ce rang !**\
+
+** 🤖 Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __MUSE__ !!! (-"+ data_boutique.prix_rang_muse+" :star:)**\
+
+
+🤖 **Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __MUSE__ !!! (-"+ data_boutique.prix_rang_muse+" :star:)**\
+
+**Tu as acheté le rang MUSE**\n\
+*Il te permettra de faire des skin/stuff a d'autres membres*\n\
+> **Utilise la commande !skin @mention dans le canal 『🧵』𝐌𝐮𝐬𝐞**\n\
+> *Ton client devra valider et à la suite tu devras mettre le lien de ton stuff ou l'image du skin que tu as créé !*\n\
+**A bientôt !**\n\
+
+<@&"+ data_guild._guild[index_guild].guild +">\n**Le membre <@!"+ data_user._user[index_user].id +"> dois recevoir le rang Muse en jeu**\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+//FONCTION fun_achat_rang_nomade :
+
+🤖 **Vous avez déjà ce rang !**\
+
+🤖 **Vous n'avez pas assez de :star: pour acheter ce rang !**\
+
+** 🤖 Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __NOMADE__ !!! (-"+ data_boutique.prix_rang_nomade+" :star:)**\
+
+
+**Tu as acheté le Rang Bonus NOMADE**\n\
+Ce rang ne demande aucune commande mais des négociations !\n\
+Dès lors qu'un membre demande de l'aide pour se faire téléporter devant un donjon, tu peux te porter volontaire !\n\
+Effectivement, ce rôle sert de \"*taxi*\"\n\
+Les membres que tu téléportera pourront après négociation, te faire un !don de :star:\n\
+**A bientôt !**\n\
+
+🤖 **Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __NOMADE__ !!! (-"+ data_boutique.prix_rang_nomade+" :star:)**\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+// FONCTION
+
+async function fun_achat_rang_recruteur(message, command) {
+
+    return(message.channel.send("🤖 **Vous avez déjà ce rang !**"));    
+    
+    return(message.channel.send("🤖 **Vous n'avez pas assez de :star: pour acheter ce rang !**"));
+
+    nchan.send("** 🤖 Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __RECRUTEUR__ !!! (-"+ data_boutique.prix_rang_recruteur+" :star:)**");
+    
+    message.channel.send("🤖 **Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __RECRUTEUR__ !!! (-"+ data_boutique.prix_rang_recruteur+" :star:)**");
+
+**Tu as acheté le rang RECRUTEUR**\n\
+*Ta mission est le plus importante, celle de recruter !*\n\
+> **Tu as choisis le rôle le plus important ! On ne dirai pas comme ça, mais sans personne pour recruter, ta guilde serai vide**\n\
+N'oublis surtout pas de dire à la personne que tu recrutes de mentionner ton pseudo lorsquelle fera le tutoriel.\n\
+**Si elle ne le fait pas... Tu perdras ta récompenses !**\n\
+*Et oui ! Pas besoin de commande pour recruter*\n\
+A bientôt !\n\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+// FONCTION fun_achat_rang_tueur :
+
+    return(message.channel.send("🤖 **Vous avez déjà ce rang !**"));
+
+    return(message.channel.send("🤖 **Vous n'avez pas assez de :star: pour acheter ce rang !**"));
+
+    nchan.send("** 🤖 Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __TUEUR DE PERCEPTEUR__ !!! (-"+ data_boutique.prix_rang_tueur+" :star:)**");
+    
+    message.channel.send("🤖 **Le membre <@"+ data_user._user[index_user].id +"> a reçu le rang __TUEUR DE PERCEPTEUR__ !!! (-"+ data_boutique.prix_rang_tueur+" :star:)**");
+
+*Tu as choisis le rang TUEUR DE PERCEPTEUR**\n\
+Tu es la ligne de défense, la précieuse recru qui deviendra peut-être un jour le plus grand Mercenaire de la Corporation\n\
+*Ta mission est de protéger nos percepteurs et d\'organiser des attaques*\n\
+> **Tu seras parfois invité à faire des guerres de grandes envergure !**\n\
+Pour utiliser ton Métier va dans le canal 『🔫』𝐓𝐮𝐞𝐮𝐫\n\
+Tu as deux commandes :\n\
+``1``!ATQ @mention [@mention...]\n\
+``2``!DEF @mention [@mention...]\n\
+Il s'agira de mentionner les personnes avec qui tu as fais une defense ou une attaque.\n\
+Ils devront valider et toi mettre une preuve de ton exploit (screen de la fin du combat).\n\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+// FONCTION fun_achat_taxe :
+
+        return(message.channel.send("🤖 **Le butin est incorrect, les chiffres doivent-être collés !**\n\
+__Exemple :__ !taxe **12340**"));
+
+        return(message.channel.send("🤖 **Il manque le butin du percepteur!**\n\
+__Exemple :__ !taxe **12340**"));
+
+        return(message.channel.send("🤖 **Vous devez mettre un chiffre en deuxième arguments de votre commande !**"));
+
+        return(message.channel.send("🤖 **Vous ne pouvez pas mettre un butin de plus de 1.000.000 kamas !**"));
+
+        return(message.channel.send("🤖 **Vous n'avez pas besoin de payer de taxe !!!**"));
+
+            message.guild.channels.cache.find(elem => elem.id == data_syst.Etoiles_id).send("\
+**[TAXE] 🤖 Le membre <@!"+ message.member.id + ">** a mis **"+ butin +" kamas** dans le coffre de la guilde **"+ data_guild._guild[i].name_guild +"**\n\
+**Un grand merci !**");
+
+            message.channel.send("🤖 **[TAXE]Vous avez mis "+ butin +" kamas dans le coffre de votre guilde !**");
+        
+            message.member.send("🤖 **Vous devez verser "+ butin +" kamas dans le coffre de votre guilde.**\n\
+**__Voici comment faire :__**\n\
+> 1°) Rendez-vous dans le bulletin de guilde (en jeu)\n\
+> 2°) Il vous sera indiqué où se trouve votre Meneur en mode marchand !\n\
+> 3°) Rendez-vous à cette position\n\
+> 4°) Cliquez sur votre Meneur ou Meneuse\n\
+> 5°) Achetez pour "+ butin +" kamas de ressources\n\
+> **Bravo ! Vous avez versé de l'argent dans le coffre de votre guilde**\n\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//SECTION /cmd_user/fun_react || cmd_user
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+//FONCTION REACTION
+message.guild.channels.cache.find(elem => elem.id == data_syst.Etoiles_id).send("**Le membre <@!"+data_user._user[id].id+"> a dévérouillé le [<#"+ data_syst.Succès_id +">] "+ data_syst.Attaquant_Platine_name +" !**")
+
+let tmp_txt = "**Une attaque a été faite par :**\n";
+let tmp_txt_for_donjon = ":star: **ATTAQUE FINI** :star:\n**Un screen de la fin du combat est obligatoire !**\n``` ```\n";
+
+await msg.message.edit(":star: **ATTAQUE EN COURS...** :star:\n\
+**Un screen de la fin du combat est obligatoire !**\n\
+*Vous avez 10 minutes avant annulation*\n\
+``` ```\n\
+"+ tmp_txt + " \
+``` ```\
+**Valider** = ✅ \n\
+**Annuler** = ❌");
+    }
+
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+//FONCTION fun_braconnier
+return(message.channel.send("🤖 **Il faut @mentionner quelqu'un !**"));
+return(message.channel.send("🤖 **Il manque le nombre de Dragodinde que vous allez monter !**"));
+return(message.channel.send("🤖 **Le chiffre que vous avez mis est incorrect !**"));
+return(message.channel.send("🤖 **Vous ne pouvez pas livrer plus de 100 dragodindes à la fois !**"));
+return(message.channel.send("🤖 **Vous ne pouvez pas livrer moins de 10 dragodindes !**"));
+return(message.channel.send("🤖 **Vous ne pouvez pas faire un skin/stuff pour qu'une seul personne à la fois !**"));
+return(message.channel.send("🤖 **Le membre <@!"+ data_user._user[all_index_mentions_users_id[i]].id +"> est déjà inscrit autre part !**"));
+tmp_txt += "**=>** <@!"+ data_braconnier._braconnier[data_braconnier._braconnier.length - 1].id_inscris_on[0] +"> ❌";
+new_msg = await message.channel.send(":star: ** ["+ number +"] UP DE DRAGODINDES EN COURS...** :star:\n\
+*Vous avez 10 minutes avant annulation*\n\
+``` ```\
+"+ tmp_txt + " \
+``` ```\
+**Valider** = ✅ \n");
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+//FONCTION fun_def :
+    return(message.channel.send("🤖 **Il faut @mentionner quelqu'un !**"));
+    return(message.channel.send("🤖 **Vous devez être au moins deux pour lancer un donjon !**"));
+    return(message.channel.send("🤖 **Le membre <@!"+ data_user._user[all_index_mentions_users_id[i]].id +"> est déjà inscrit autre part !**"));
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+//FONCTION fun_don :
+
+return(message.channel.send("🤖 **Il faut @mentionner quelqu'un !**"));
+return(message.channel.send("🤖 **Ca ne sert à rien de se donner soit-même des :star: ...**"));
+return(message.channel.send("🤖 **Il manque un chiffre pour cette commande...**"));
+return(message.channel.send("🤖 **Le nombre est incorrect !**"));
+return(message.channel.send("🤖 **Le nombre est incorrect !**"));
+return(message.channel.send("🤖 **Il vous faudrai "+ ((data_user._user[index_user].stars - parseInt(command[2],10))* -1) +" :star: de plus pour faire cette donation.**"));
+return(message.channel.send("🤖 **Vous avez utilisé trop de spam certaine commande aujourd'hui !**  "));
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+//FONCTION fun_donjon :
+
+return(message.channel.send("🤖 **Il faut @mentionner quelqu'un !**"));
+return(message.channel.send("🤖 **Vous devez être au moins deux pour lancer un donjon !**"));
+return(message.channel.send("🤖 **Le membre <@!"+ data_user._user[all_index_mentions_users_id[i]].id +"> est déjà inscrit autre part !**"));
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//
+//FONCTION fun_like :
+
+return(message.channel.send("🤖 **Il faut @mentionner quelqu'un !**"));
+return(message.channel.send("🤖 **Le narcissisme est illégal ici !**"));
+return(message.channel.send("🤖 **Vous ne pouvez plus faire de !like aujourd'hui !**"));
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+//FONCTION fun_profil :
+return(message.channel.send("🤖 **Je n'ai pas trouvé cette utilisateur !**"));
+return(message.channel.send("🤖 **Pour continuer le tutoriel, va ici => <#"+ data_syst.channel_tuto_ton_profil_id +"> **"));
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_skin :
+
+return(message.channel.send("🤖 **Il faut @mentionner quelqu'un !**"));
+return(message.channel.send("🤖 **Vous ne pouvez pas faire un skin/stuff pour qu'une seul personne à la fois !**"));
+return(message.channel.send("🤖 **Le membre <@!"+ data_user._user[all_index_mentions_users_id[i]].id +"> est déjà inscrit autre part !**"));
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_vol :
+return(message.channel.send("🤖 **Il faut @mentionner quelqu'un !**"));
+return(message.channel.send("🤖 **Vous voler vous-même... Bien essayé...**"));
+return(message.channel.send("🤖 **Il manque un argument pour cette commande...**"));
+return(message.channel.send("🤖 **Vous ne pouvez plus faire de !vol aujourd'hui !**"));
+return(message.channel.send("🤖 **Trop de flood pour toi, aujourd'hui !**"));
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+// CATEGORIE TUTORIEL
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_check_emoji_enter_guild :
+
+await msg.message.edit('**Le membre <@'+ data_ins._register[i].idusr +'> a été accepté dans votre guilde !**');
+send_in_chan.send("**Un nouveau membre viens de nous rejoindre.**\n **Bienvenue à <@"+ data_user._user[index_user].id +"> !!!**");
+tmp_txt += "] en recrutant le membre <@!"+  data_ins._register[i].idusr+"> !**";
+msg.message.edit('**Le membre <@'+ data_ins._register[i].idusr +'> n\'a pas été accepté dans votre guilde !**');
+msg.message.edit('**Le membre <@'+ data_ins._register[i].idusr +'> a été kick par <@'+ usr.id +'>pour des raisons obscures !**');
+mber.kick('**Vous avez été kick pour des raisons obscures...**');
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_welcome_create :
+
+let text = 'Salutation :thumbsup: \n\
+Si tu es ici c\'est pour nous rejoindre.\n\
+**Ecris le nom de la guilde que tu veux rejoindre !**\n\
+> **__LISTE DES GUILDES__**\n';
+add_txt += '> **'+ (nbr_guild++) +'°) ' + data_tuto.name_guild[i].toUpperCase()  + '**\n';
+take_msg = await take_channel.send(text + add_txt + '*Un copié/collé devrai t\'aider...* :scream:');    
+await take_msg.edit(text + add_txt + '*Un copié/collé devrai t\'aider... *:scream:');
+//------------------------------------------------------------------
+
+
+//------------------------------------------------------------------
+// CATEGORIE TUTORIEL/Etape_tuto
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_channel_tuto_argument :
+        return (message.channel.send("🤖 **Ta commande doit comporter au minimum deux arguments pour marcher**"));
+        return (message.channel.send("🤖 **Ta commande n'est pas :** \n\
+> **"+ command[0] +"\n\
+__Mais celle-ci :__\n\
+> **!GPALU**"));
+        return (message.channel.send("🤖 **Ton deuxième arguments doit-être un nombre !**"));
+    let nchan = await message.guild.channels.cache.find(elem => elem.id == data_syst.channel_tuto_demarrage_id).send("🤖 **<@"+ data_user._user[index_user].id +">**"); 
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_channel_tuto_bases
+return (message.channel.send("🤖 Veuillez réessayer... Il y a du y avoir une erreur lors de votre enregistrement"));
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_channel_tuto_boutique :
+
+return(message.channel.send("🤖 **Tu n'as pas acheté ton rang ! Rends toi dans la <#"+ data_syst.boutique_id +">**"));
+return (message.channel.send("🤖 La commande est **!NEXT**"));
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_channel_tuto_cmd :
+
+return(message.channel.send("🤖 **Il faut me mentionner !**"));
+return(message.channel.send("🤖 **Vous ne pouvez pas vous mentionner vous-même !**"));
+return(message.channel.send("🤖 **Vous avez déjà réussis à like quelqu'un** !\n" + txt));
+message.channel.send("🤖 **Bravo vous avez réussis à like quelqu'un** !\n" + txt);
+return(message.channel.send("🤖 **Vous avez déjà réussis à faire un don** !\n" + txt));
+return(message.channel.send("🤖 **La commande don demande un troisième argument, un [NBR] de :star: que tu veux donner !!!**\n" + txt));
+return(message.channel.send("🤖 **C'est presque ça, mais au lieu de mettre "+ command[2] +", il faut mettre un nombre !**\n" + txt));
+message.channel.send("🤖 **Bravo vous avez réussis à donner des :star: à quelqu'un** !\n" + txt);
+return(message.channel.send("🤖 **Vous avez déjà réussis à prendre une :star:** !\n" + txt));
+message.channel.send("🤖 **Bravo vous avez réussis à prendre une :star:** !\n" + txt);
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_channel_tuto_level :
+
+message.channel.send("🤖 **Tu dois écrire ton niveau et donc un chiffre !**");
+message.channel.send("🤖 **Ton niveau doit-être compris entre 1 et 200 **!");
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_channel_tuto_mention :
+
+message.channel.send("🤖 Malheureusement, ton message ne contient aucune mention\n\
+<@!"+ message.member.id +"> *par exemple*");
+message.channel.send("🤖 **Vous ne pouvez pas vous recruter vous-même !!**");
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_channel_tuto_pseudo :
+
+message.channel.send("🤖 **Comme en jeu, ton pseudo ne dois contenir aucun espace !**");
+message.channel.send("🤖 **Ton pseudo dois contenir entre 2 et 31 caractères !**");
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_channel_tuto_roles :
+    message.channel.send("🤖 **Vous n'avez mentionné aucun rôle...**\n\
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_channel_tuto_ton_profil :
+return (message.channel.send("🤖 La commande est **!NEXT**"));
+return(message.channel.send("🤖 **Tu n'as vérifier ton profil ! Rends toi ici => <#"+ data_syst.Profil_id +">**"));
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Commentaire :
+// FONCTION fun_channel_tuto_welcome :
+
+return(message.channel.send("🤖 **Votre candidature à déjà été envoyé ! Le Staff de chaque guilde a 48 H de délai pour toutes demandes !**"));
+return(message.channel.send("🤖 **Je ne vous ai pas trouvé ! Veuillez contacter un administrateur**"));
+return(message.channel.send("🤖 [ERROR] **Fiche obsolète, contact admin !**"))
+msg = await message.guild.channels.cache.find(elem => elem.id == data_guild._guild[index_guild].channel_staff_mission_id).send("**🤖 Le membre <@"+ message.member.id +"> demande à faire partie de votre guilde !**\n\
+> **__pseudo__ :"+ data_user._user[index_user].username +"**\n\
+> **level "+ data_ins._register[index_register].level +"**\n\
+> **recruté par** : <@"+ data_ins._register[index_register].id_recruteur +">\n\
+``` ```✅ (**valider**) \n> ❌ (**annuler**) \n> 💀 (**Kik**)");
+await message.guild.channels.cache.find(elem => elem.id == data_guild._guild[index_guild].channel_staff_mission_id).send("**Commentaire de **<@"+ message.member.id +">: \n" + data_ins._register[index_register].usrmsg);
+return(message.channel.send("🤖 **Vous avez du certainement, mal écrire le nom de la guilde !**"));
+//------------------------------------------------------------------

@@ -1,0 +1,16 @@
+{
+    "_POS_PERCO" : [{
+        "id_save" : 0,
+        "id_user" : [],
+        "butin" : 0,
+        "pos" : "",
+        "name" : "",
+        "statue" : false,
+        "day" : 0,
+        "find" : 0,
+        "donjon_statue" : false,
+        "dimension_statue" : false,
+        "ATQ_STATUE" : false,
+        "delete" : false
+    }]
+}

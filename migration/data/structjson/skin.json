@@ -1,0 +1,14 @@
+{
+    "_skin" : 
+    [{
+        "id_message" : "",
+        "id_creator": "",
+        "id_inscris" : [],
+        "id_inscris_on": [],
+        "nbr_on" : 0,
+        "nbr_on_max" : 0,
+        "add_emoticone" : false,
+        "statue" : true,
+        "screen_proof" : false
+    }]
+}

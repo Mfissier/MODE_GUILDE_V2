@@ -1,0 +1,18 @@
+{
+    "prix_rang_espion" : 10,
+    "prix_rang_tueur" : 10,
+    "prix_rang_muse" : 10,
+    "prix_rang_recruteur" : 10,
+    "prix_rang_chercheur"  : 10,
+    "prix_rang_braconnier" : 10,
+    "prix_rang_nomade" : 10,
+    "prix_mana" : 5,
+    "prix_percepteur_1" : 15,
+    "prix_percepteur_2" : 30,
+    "prix_percepteur_3" : 45,
+    "prix_percepteur_4" : 60,
+    "prix_migration" : 0.80,
+    "id_message_1" : "",
+    "id_message_2" : "",
+    "id_message_3" : ""
+}

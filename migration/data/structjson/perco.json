@@ -1,0 +1,11 @@
+{
+    "PVP_PERCO" : [{
+        "id_groupe_message" : "",
+        "statue" : false,
+        "PVP_PERCO_STATUE" : false,
+        "time_create" : "",
+        "delete_nbr" : 0,
+        "find_nbr" : 0,
+        "name_alli" : ""
+    }]
+}

@@ -1,0 +1,20 @@
+{
+    "_register" : [
+        {
+            "delete_statue" : false,
+            "end_statue" : false,
+            "statue" : false,
+            "rang" : "",
+            "id_msg" : "",
+            "usrname" : "",
+            "idusr" : "",
+            "id_guild" : "",
+            "level" : "",
+            "usrmsg" : "",
+            "statue_tuto_wait" : false,
+            "statue_migration" : false,
+            "id_recruteur" : "",
+            "time_out_id" : ""
+        }        
+    ]
+}

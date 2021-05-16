@@ -1,0 +1,11 @@
+{
+    "recrutement" : [
+    {
+        "id_message" : "",
+        "statue" : false,
+        "id_usr" : "",
+        "id_recruteur" : "",
+        "username" : ""
+    }
+    ]
+}
